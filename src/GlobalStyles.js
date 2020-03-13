@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import fonts from "assets/fonts";
 
-import { H1_SIZE, H2_SIZE, H3_SIZE } from "app-constants";
+import { H1_SIZE, H2_SIZE, H3_SIZE, COLORS } from "app-constants";
 
 export default createGlobalStyle`
   * {
@@ -18,14 +18,17 @@ export default createGlobalStyle`
 
   h1 {
     font-size: ${H1_SIZE}rem;
+    color: ${COLORS.BLUE}
   }
 
   h2 {
-  font-size: ${H2_SIZE}rem;
+    font-size: ${H2_SIZE}rem;
+    color: ${COLORS.BLUE}
   }
   
   h3 {
-  font-size: ${H3_SIZE}rem;
+    font-size: ${H3_SIZE}rem;
+    color: ${COLORS.BLUE}
   }
 
   ${fonts}
@@ -39,9 +42,9 @@ export default createGlobalStyle`
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 16px;
-    font-size: 1.6rem;
-    line-height: 1.5;
+    font-size: 18px;
+    font-size: 1.8rem;
+    line-height: 1.3;;
     min-height: 100vh;
   }
 
