@@ -6,7 +6,7 @@ import { useTransition, animated } from "react-spring";
 const Tab = styled.div`
   display: inline-block;
   cursor: pointer;
-  padding: 20px;
+  padding: 2rem;
 `;
 
 const TabPanel = styled.div`

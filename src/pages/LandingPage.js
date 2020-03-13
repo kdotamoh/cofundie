@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { color, space, layout } from "styled-system";
 
+import { COLORS } from "app-constants";
 import Listing, { Listings } from "components/Listing";
+import Navbar from "components/Navbar";
+import Header from "components/Header";
 import Tabs from "components/Tabs";
+
+import newsLogos from "assets/news-logos.png";
 
 const Available = () => {
   return (
@@ -44,41 +50,51 @@ const SoldOut = () => {
   );
 };
 
+const Section = styled.section`
+  ${color}
+  ${space}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+`;
+
+const Container = styled.div`
+  ${layout}
+`;
+
+const NewsLogos = styled.img`
+  width: 70%;
+`;
+
 const LandingPage = props => {
   const [previousTab, setPreviousTab] = useState(0);
 
+  const year = new Date().getFullYear();
+
   return (
     <LandingPageStyle>
-      <nav>
-        <ul>
-          <li>About</li>
-          <li>FAQ</li>
-          <li>Realsights Blog</li>
-          <li>Get Started</li>
-          <li>Sign In</li>
-        </ul>
-      </nav>
-      <header>
-        <h1>
-          Find and co-invest in high return real estate from the comfort of your
-          home.
-        </h1>
-        <button>Get Started</button>
-      </header>
+      <Navbar />
+      <Header />
       <main>
-        <section>
+        <Section pt="6rem" pb="2rem">
           <h3>As Seen In The News</h3>
-        </section>
-        <section>
+          <NewsLogos src={newsLogos} alt="" />
+        </Section>
+        <Section bg={COLORS.BACKGROUND_LIGHT_BLUE} py="10rem">
           <h3>What We Do</h3>
-          <p>
-            In 3-clicks you can become a landlord and enjoy returns from sale or
-            rent. Co-invest in real estate developments that use alternative
-            building materials that have faster build time and are eco-friendly.
-            Its never been this easy to invest in real estate
-          </p>
+          <Container width="70%">
+            <p>
+              In 3-clicks you can become a landlord and enjoy returns from sale
+              or rent. Co-invest in real estate developments that use
+              alternative building materials that have faster build time and are
+              eco-friendly. Its never been this easy to invest in real estate
+            </p>
+          </Container>
           <button>Learn more</button>
-
+        </Section>
+        <Section bg={COLORS.BACKGROUND_LIGHT_BLUE}>
           <Tabs
             currentTab={previousTab}
             onChange={setPreviousTab}
@@ -100,11 +116,11 @@ const LandingPage = props => {
               }
             ]}
           />
-        </section>
-        <section>
+        </Section>
+        <Section bg={COLORS.BACKGROUND_LIME} py="10rem">
           <h3>How It Works</h3>
-        </section>
-        <section>
+        </Section>
+        <Section bg={COLORS.BACKGROUND_MEDIUM_BLUE} py="10rem">
           Get unprecedented access
           <p>
             Regardless of your income level, you can now gain access to some of
@@ -113,8 +129,8 @@ const LandingPage = props => {
             up
           </p>
           <button>Get Started</button>
-        </section>
-        <section>
+        </Section>
+        <Section py="10rem">
           <h2>Why invest with us?</h2>
           <p>
             Every single deal that makes it through to the platform has been put
@@ -122,17 +138,22 @@ const LandingPage = props => {
             edge technology. All assets are also insured by our reputable
             insurance partners
           </p>
-        </section>
-        <section>
+        </Section>
+        <Section py="10rem">
           <h2>Testimonials</h2>
-        </section>
-        <section>
-          <p>
+        </Section>
+        <Section bg={COLORS.BLUE} py="10rem">
+          <h3>
             Join thousands of Property Owners, Agents and Individuals that love
             using Cofundie.
+          </h3>
+          <p>
+            Signing up is easy, and our team will get you started in no time.
           </p>
-        </section>
+          <button>Get Started</button>
+        </Section>
       </main>
+      <footer>Cofundie Company Limited, {year}. All rights reserved.</footer>
     </LandingPageStyle>
   );
 };

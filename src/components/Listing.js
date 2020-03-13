@@ -36,7 +36,7 @@ const ListingLabels = styled.div`
 
 const ListingFigures = styled.div`
   text-align: left;
-  padding: 20px;
+  padding: 2rem;
 `;
 
 const ListingFigure = styled.div``;
@@ -44,7 +44,7 @@ const ListingFigure = styled.div``;
 const ListingLabel = styled.span`
   width: fit-content;
   display: block;
-  padding: 5px;
+  padding: 0.5rem;
   background-color: blue;
 `;
 
