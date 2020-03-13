@@ -1,11 +1,14 @@
 import { createGlobalStyle } from "styled-components";
+import fonts from "assets/fonts";
+
+import { H1_SIZE, H2_SIZE, H3_SIZE } from "app-constants";
 
 export default createGlobalStyle`
   * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* font-family: MTNBrighterSans-Regular; */
+    font-family: "Museo";
   }
 
   html {
@@ -13,20 +16,27 @@ export default createGlobalStyle`
     height: 100vh;
   }
 
-  h1, h2, h3 {
-    /* font-family: MTNBrighterSans-Bold; */
+  h1 {
+    font-size: ${H1_SIZE}rem;
   }
 
-  h4, h5 {
-    /* font-family: MTNBrighterSans-Medium; */
+  h2 {
+  font-size: ${H2_SIZE}rem;
   }
+  
+  h3 {
+  font-size: ${H3_SIZE}rem;
+  }
+
+  ${fonts}
 
   body {
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+     /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-       sans-serif;
+       sans-serif; */
+    font-family: "Museo";
     color: #3d3d3d;
-    font-weight: normal;
+    font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
