@@ -1,8 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import mexicanHouse from "assets/house.png";
+import mexicanHouse from "assets/images/house.png";
 
 const ListingStyle = styled.div`
   width: 30vw;

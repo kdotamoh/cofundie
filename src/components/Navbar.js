@@ -1,20 +1,21 @@
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import logo from "assets/cofundie-logo.png";
+import logo from "assets/images/cofundie-logo.png";
 
 const NavbarStyle = styled.nav`
+  background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 4rem 10rem;
+  padding: 2.5rem 10rem;
 
   font-size: 2.2rem;
 
   img {
-    height: 6rem;
+    height: 5rem;
   }
 
   ul {
