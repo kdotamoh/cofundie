@@ -1,12 +1,13 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+// import "./App.css";
+import GlobalStyles from "./GlobalStyles";
 
 import LandingPage from "pages/LandingPage";
 
 function App() {
   return (
     <div className="App">
+      <GlobalStyles />
       <LandingPage />
     </div>
   );
