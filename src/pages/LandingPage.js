@@ -10,6 +10,7 @@ import Listing, { Listings } from "components/Listing";
 import Navbar from "components/Navbar";
 import Header from "components/Header";
 import Tabs from "components/Tabs";
+import Footer from "components/Footer";
 
 import newsLogos from "assets/images/news-logos.png";
 import laptop from "assets/images/laptop.png";
@@ -173,8 +174,6 @@ const FlexSectionRight = styled.div`
 
 const LandingPage = props => {
   const [previousTab, setPreviousTab] = useState(0);
-
-  const year = new Date().getFullYear();
 
   return (
     <LandingPageStyle>
@@ -340,7 +339,7 @@ const LandingPage = props => {
           </Container>
         </Section>
       </main>
-      <footer>Cofundie Company Limited, {year}. All rights reserved.</footer>
+      <Footer />
     </LandingPageStyle>
   );
 };
