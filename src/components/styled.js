@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { space, color, layout } from "styled-system";
 
-import { COLORS } from "app-constants";
+// import { COLORS } from "app-constants";
 
 export const Button = styled.button`
   ${layout}

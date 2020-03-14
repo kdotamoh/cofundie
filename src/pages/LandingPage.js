@@ -18,6 +18,7 @@ import create from "assets/images/create.png";
 import earn from "assets/images/earn.png";
 import choose from "assets/images/choose.png";
 import pay from "assets/images/pay.png";
+import tick from "assets/images/tick.png";
 
 const Available = () => {
   return (
@@ -70,6 +71,7 @@ const Section = styled.section`
 
 const Container = styled.div`
   ${layout}
+  ${color}
 `;
 
 const NewsLogos = styled.img`
@@ -81,9 +83,7 @@ const FeatureGrid = styled.div`
   width: 80%;
   grid-template-columns: 50% 50%;
   grid-template-rows: auto;
-  grid-template-areas:
-    "feature feature"
-    "feature feature";
+  grid-template-areas: "feature feature";
 `;
 
 const Feature = styled.div`
@@ -102,6 +102,46 @@ const Feature = styled.div`
 
   p {
     margin-right: 5rem;
+  }
+`;
+
+const ReasonGrid = styled(FeatureGrid)`
+  ${layout};
+  margin-top: 8rem;
+  align-items: center;
+  width: 75%;
+  color: ${COLORS.BLUE};
+
+  img {
+    object-fit: cover;
+    width: 50rem;
+    height: 30rem;
+    border-radius: 6px;
+  }
+`;
+
+const Reasons = styled.div`
+  text-align: left;
+  align-items: space-around;
+`;
+
+const Reason = styled.p`
+  font-weight: 700;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  &:before {
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    display: block;
+    background: url(${tick}) no-repeat;
+    background-size: 1.6rem;
+    margin-top: 3px;
+    /* background-image:  */
+    float: left;
   }
 `;
 
@@ -253,8 +293,8 @@ const LandingPage = props => {
           </Container>
         </Section>
         <Section py="10rem">
-          <Container width="43%">
-            <h2>Why invest with us?</h2>
+          <Container width="43%" color={COLORS.BLUE}>
+            <h2 style={{ marginBottom: "2.5rem" }}>Why invest with us?</h2>
             <p>
               Every single deal that makes it through to the platform has been
               put through a rigorous due diligence process using the latest
@@ -262,10 +302,19 @@ const LandingPage = props => {
               reputable insurance partners
             </p>
           </Container>
-          <FlexSection>
-            <img style={{ width: "50rem" }} src={whiteHouse} alt="" />
-            <div>sdf</div>
-          </FlexSection>
+          <ReasonGrid mt="4rem">
+            <img src={whiteHouse} alt="" />
+            <Reasons>
+              <Reason>All partners are vetted intensively</Reason>
+              <Reason>
+                Only 5% of deals we are pitched make it to the platform
+              </Reason>
+              <Reason>
+                All properties are built using eco-friendly materials
+              </Reason>
+              <Reason>We provide the fastest time to ROI</Reason>
+            </Reasons>
+          </ReasonGrid>
         </Section>
         <Section py="10rem">
           <h2>Testimonials</h2>
