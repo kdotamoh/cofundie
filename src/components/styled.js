@@ -9,7 +9,7 @@ export const Button = styled.button`
   ${color}
 
   background-color: ${props => props.bg};
-  border-color: ${props => props.bg};
+  border-color: ${props => (props.borderColor ? props.borderColor : props.bg)};
   border-radius: 2px;
   color: ${props => props.color};
   font-size: 2.4rem;

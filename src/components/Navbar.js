@@ -1,6 +1,9 @@
 import React from "react";
 // import PropTypes from "prop-types";
 import styled from "styled-components";
+import { Button } from "components/styled";
+
+import { COLORS } from "app-constants";
 
 import logo from "assets/images/cofundie-logo.png";
 
@@ -18,10 +21,16 @@ const NavbarStyle = styled.nav`
     height: 5rem;
   }
 
+  a {
+    color: unset;
+    text-decoration: none;
+  }
+
   ul {
     display: flex;
     flex-direction: row;
     list-style: none;
+    align-items: center;
 
     > * {
       /* &:not(:last-child) { */
@@ -36,11 +45,27 @@ const Navbar = props => {
     <NavbarStyle>
       <img src={logo} alt="" />
       <ul>
-        <li>About</li>
-        <li>FAQ</li>
-        <li>Realsights Blog</li>
-        <li>Get Started</li>
-        <li>Sign in</li>
+        <li>
+          <a href="#/">About</a>
+        </li>
+        <li>
+          <a href="#/">FAQ</a>
+        </li>
+        <li>
+          <a href="#/">Realsights Blog</a>
+        </li>
+        <Button
+          px="4rem"
+          py="1rem"
+          bg="white"
+          borderColor={COLORS.BLUE}
+          color={COLORS.BLUE}
+        >
+          <a href="#/">Get Started</a>
+        </Button>
+        <li>
+          <a href="#/">Sign in</a>
+        </li>
       </ul>
     </NavbarStyle>
   );
