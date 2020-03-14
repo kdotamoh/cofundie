@@ -85,6 +85,18 @@ const ListingName = styled.p`
   font-size: 125%;
 `;
 
+export const Listings = styled.div`
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1.5%;
+  grid-template-rows: auto;
+  grid-template-areas: "feature feature";
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 10rem;
+`;
+
 const Listing = props => {
   return (
     <div style={{ marginBottom: "6rem" }}>
@@ -119,18 +131,6 @@ const Listing = props => {
     </div>
   );
 };
-
-export const Listings = styled.div`
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 30% 30% 30%;
-  grid-gap: 1.5%;
-  grid-template-rows: auto;
-  grid-template-areas: "feature feature";
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-bottom: 10rem;
-`;
 
 Listing.propTypes = {};
 

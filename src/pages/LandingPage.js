@@ -43,13 +43,13 @@ const ComingSoon = () => {
   );
 };
 
-// const Closed = () => {
-//   return (
-//     <Listings>
-//       <Listing />
-//     </Listings>
-//   );
-// };
+const Closed = () => {
+  return (
+    <Listings>
+      <Listing />
+    </Listings>
+  );
+};
 
 const SoldOut = () => {
   return (
@@ -215,18 +215,23 @@ const LandingPage = props => {
             onChange={setPreviousTab}
             items={[
               {
-                label: "Coming Soon",
-                key: 1,
-                component: <ComingSoon />
-              },
-              {
                 label: "Available",
-                key: 2,
+                key: 1,
                 component: <Available />
               },
               {
-                label: "Sold Out",
+                label: "Coming Soon",
+                key: 2,
+                component: <ComingSoon />
+              },
+              {
+                label: "Closed",
                 key: 3,
+                component: <Closed />
+              },
+              {
+                label: "Sold Out",
+                key: 4,
                 component: <SoldOut />
               }
             ]}

@@ -3,15 +3,39 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useTransition, animated } from "react-spring";
 
+import { COLORS } from "app-constants";
+
 const Tab = styled.div`
   display: inline-block;
   cursor: pointer;
-  padding: 2rem;
+  padding: 1.5rem 0;
+  padding-right: 4rem;
+  margin-right: 10rem;
+  
+  border-bottom: ${props => (props.selected ? `solid 3px ${COLORS.BLUE}` : "")};
+  /* border-bottom: solid 3px ${COLORS.BLUE}; */
+  transform: translateY(2px);
+`;
+
+const TabGroup = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  font-size: 150%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 4rem;
 `;
 
 const TabPanel = styled.div`
   position: relative;
   overflow-x: hidden;
+`;
+
+const TabGrid = styled.div`
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 95%;
+  grid-template-rows: auto;
 `;
 
 const Tabs = ({ items, currentTab, onChange }) => {
@@ -39,8 +63,8 @@ const Tabs = ({ items, currentTab, onChange }) => {
   if (currentTab !== previousTab) setPreviousTab(currentTab);
 
   return (
-    <>
-      <div>
+    <TabGrid>
+      <TabGroup>
         {items.map((item, tabIndex) => (
           <Tab
             key={tabIndex}
@@ -50,7 +74,7 @@ const Tabs = ({ items, currentTab, onChange }) => {
             {item.label}
           </Tab>
         ))}
-      </div>
+      </TabGroup>
       <TabPanel>
         {transition.map(({ item, props, key }) => (
           <animated.div
@@ -67,7 +91,7 @@ const Tabs = ({ items, currentTab, onChange }) => {
           </animated.div>
         ))}
       </TabPanel>
-    </>
+    </TabGrid>
   );
 };
 
