@@ -13,7 +13,7 @@ import Tabs from "components/Tabs";
 import Footer from "components/Footer";
 
 import newsLogos from "assets/images/news-logos.png";
-import laptop from "assets/images/laptop.png";
+import laptop from "assets/images/macbook.png";
 import whiteHouse from "assets/images/white-house.png";
 import create from "assets/images/create.png";
 import earn from "assets/images/earn.png";
@@ -27,6 +27,7 @@ const Available = () => {
       <Listing />
       <Listing />
       <Listing />
+      <Listing />
     </Listings>
   );
 };
@@ -34,6 +35,7 @@ const Available = () => {
 const ComingSoon = () => {
   return (
     <Listings>
+      <Listing />
       <Listing />
       <Listing />
       <Listing />
@@ -52,6 +54,7 @@ const ComingSoon = () => {
 const SoldOut = () => {
   return (
     <Listings>
+      <Listing />
       <Listing />
       <Listing />
       <Listing />
@@ -212,17 +215,17 @@ const LandingPage = props => {
             onChange={setPreviousTab}
             items={[
               {
-                label: "TAB",
+                label: "Coming Soon",
                 key: 1,
                 component: <ComingSoon />
               },
               {
-                label: "TAB",
+                label: "Available",
                 key: 2,
                 component: <Available />
               },
               {
-                label: "TAB",
+                label: "Sold Out",
                 key: 3,
                 component: <SoldOut />
               }
