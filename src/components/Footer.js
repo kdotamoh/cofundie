@@ -20,7 +20,18 @@ const FooterGrid = styled.div`
   width: 80%;
   grid-template-columns: 30% 20% 20% 30%;
   grid-template-rows: auto;
-  grid-template-areas: "col col col col";
+  grid-template-areas:
+    "logo quick resources wealth"
+    "contact quick resources wealth"
+    "social quick resources wealth";
+
+  @media (max-width: 900px) {
+    grid-template-columns: 30% 30% 40%;
+    grid-template-areas:
+      "logo logo ."
+      "contact contact social"
+      "quick resources wealth";
+  }
 `;
 
 const Links = styled.div`
@@ -32,9 +43,8 @@ const Links = styled.div`
     text-decoration: none;
   }
 
-  small {
-    font-size: 14px;
-    font-weight: 500;
+  @media (max-width: 900px) {
+    font-size: 1.4rem;
   }
 `;
 
@@ -53,11 +63,22 @@ const Copyright = styled.p`
 `;
 
 const Logo = styled.img`
+  grid-area: logo;
+
   width: 14rem;
   margin-bottom: 2rem;
 `;
 
-const Images = styled.div`
+const Contacts = styled.div`
+  grid-area: contact;
+
+  display: flex;
+  flex-direction: column;
+`;
+
+const Social = styled.div`
+  grid-area: social;
+
   width: 70%;
   margin-top: 2rem;
   display: flex;
@@ -71,31 +92,31 @@ const Footer = () => {
   return (
     <FooterStyle>
       <FooterGrid>
-        <Links>
-          <Logo src={logo} alt="" />
+        <Logo src={logo} alt="" />
+        <Contacts>
           <small>19 Banana street, East Legon Accra, Ghana</small>
           <small>info@cofundie.com +233 50 169 3352</small>
-          <Images>
-            <img src={facebook} alt="" />
-            <img src={twitter} alt="" />
-            <img src={instagram} alt="" />
-          </Images>
-        </Links>
-        <Links>
+        </Contacts>
+        <Social>
+          <img src={facebook} alt="" />
+          <img src={twitter} alt="" />
+          <img src={instagram} alt="" />
+        </Social>
+        <Links style={{ gridArea: "quick" }}>
           <LinkHead>Quick Links</LinkHead>
           <a href="#/">About Us</a>
           <a href="#/">Contact Us</a>
           <a href="#/">FAQs</a>
           <a href="#/">Blog</a>
         </Links>
-        <Links>
+        <Links style={{ gridArea: "resources" }}>
           <LinkHead>Resources</LinkHead>
           <a href="#/">Privacy policy</a>
           <a href="#/">Terms of services</a>
           <a href="#/">RSS Feeds</a>
           <a href="#/">Legal</a>
         </Links>
-        <Links style={{ alignItems: "center" }}>
+        <Links style={{ alignItems: "center", gridArea: "wealth" }}>
           <LinkHead>Your wealth building partners</LinkHead>
           <span>Your wealth building partners</span>
           <span>Invest in real estate simply with us</span>
@@ -112,6 +133,7 @@ const Footer = () => {
           <span>Growing your money is our business</span>
         </Links>
       </FooterGrid>
+
       <Copyright>
         Cofundie Company Limited, {year}. All rights reserved.
       </Copyright>
