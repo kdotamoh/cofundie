@@ -15,5 +15,5 @@ export const H5_SIZE = H4_SIZE / 1.25;
 export const H6_SIZE = H5_SIZE / 1.25;
 
 export const H1_SIZE_SM = 2.4;
-export const H2_SIZE_SM = H2_SIZE / 1.125;
-export const H3_SIZE_SM = H3_SIZE / 1.125;
+export const H2_SIZE_SM = H2_SIZE / 1.5;
+export const H3_SIZE_SM = H3_SIZE / 1.5;

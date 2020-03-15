@@ -16,11 +16,19 @@ const HeaderStyle = styled.header`
 
   h1 {
     color: ${COLORS.BLUE};
+    margin-bottom: 7rem;
   }
 
   @media (max-width: 768px) {
+    min-height: unset;
+    height: 40vh;
+    background-position: 100% 0;
+
     h1 {
       font-size: ${H1_SIZE_SM}rem;
+      font-size: 1.8rem;
+      width: 70%;
+      margin-bottom: 2.5rem;
     }
   }
 `;
@@ -46,7 +54,7 @@ const Header = props => {
           Find and co-invest in high return real estate from the comfort of your
           home.
         </h1>
-        <Button mt="7rem" px="6rem" py="1.6rem" bg={COLORS.BLUE} color="white">
+        <Button bg={COLORS.BLUE} color="white">
           Get Started
         </Button>
       </Container>

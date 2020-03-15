@@ -112,7 +112,11 @@ const ReasonGrid = styled(FeatureGrid)`
 
 const Reasons = styled.div`
   text-align: left;
-  align-items: space-around;
+  width: 75%;
+
+  @media (max-width: 768px) {
+    margin: 5rem auto;
+  }
 `;
 
 const Reason = styled.p`
@@ -134,7 +138,9 @@ const Reason = styled.p`
     float: left;
   }
 
-  /* @media (max-width: ) */
+  @media (max-width: 768px) {
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const GridSection = styled.div`
@@ -206,13 +212,7 @@ const LandingPage = props => {
               eco-friendly. Its never been this easy to invest in real estate
             </p>
           </Container>
-          <Button
-            mt="5rem"
-            px="6rem"
-            py="1.6rem"
-            bg={COLORS.BLUE}
-            color="white"
-          >
+          <Button mt="5rem" bg={COLORS.BLUE} color="white">
             Learn more
           </Button>
         </Section>
@@ -290,13 +290,7 @@ const LandingPage = props => {
                   with the potential to generate consistent cashflow and
                   long-term equity build up
                 </p>
-                <Button
-                  mt="5rem"
-                  px="6rem"
-                  py="1.6rem"
-                  bg={COLORS.LIME}
-                  color={COLORS.BLUE}
-                >
+                <Button mt="5rem" bg={COLORS.LIME} color={COLORS.BLUE}>
                   Get Started
                 </Button>
               </div>
@@ -307,7 +301,7 @@ const LandingPage = props => {
           </Container>
         </Section>
         <Section py="10rem">
-          <Container width="43%" color={COLORS.BLUE}>
+          <Container width="80%" color={COLORS.BLUE}>
             <h2 style={{ marginBottom: "2.5rem" }}>Why invest with us?</h2>
             <p>
               Every single deal that makes it through to the platform has been
@@ -342,13 +336,7 @@ const LandingPage = props => {
             <p style={{ paddingTop: "3rem" }}>
               Signing up is easy, and our team will get you started in no time.
             </p>
-            <Button
-              mt="5rem"
-              px="6rem"
-              py="1.6rem"
-              bg={COLORS.LIME}
-              color={COLORS.BLUE}
-            >
+            <Button mt="5rem" bg={COLORS.LIME} color={COLORS.BLUE}>
               Get Started
             </Button>
           </Container>

@@ -13,4 +13,10 @@ export const Button = styled.button`
   border-radius: 2px;
   color: ${props => props.color};
   font-size: 2.4rem;
+  padding: 1.6rem 6rem;
+
+  @media (max-width: 768px) {
+  padding: 1.2rem 3rem;
+    font-size: 1.6rem
+  }
 `;

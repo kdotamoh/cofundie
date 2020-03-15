@@ -12,7 +12,7 @@ const FooterStyle = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 15rem;
+  padding-top: 12rem;
 `;
 
 const FooterGrid = styled.div`
@@ -26,6 +26,14 @@ const FooterGrid = styled.div`
     "social quick resources wealth";
 
   @media (max-width: 900px) {
+    width: 90%;
+
+    > * {
+      padding-bottom: 2rem;
+    }
+
+    /* font-size: 1.4rem; */
+
     grid-template-columns: 30% 30% 40%;
     grid-template-areas:
       "logo logo ."
@@ -52,6 +60,10 @@ const LinkHead = styled.h4`
   font-size: 120%;
   font-weight: 700;
   margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    font-size: unset;
+  }
 `;
 
 const Copyright = styled.p`
@@ -60,13 +72,17 @@ const Copyright = styled.p`
   font-weight: 500;
   font-size: 130%;
   color: ${COLORS.BLUE};
+
+  @media (max-width: 768px) {
+    margin-top: 3rem;
+    font-size: 80%;
+  }
 `;
 
 const Logo = styled.img`
   grid-area: logo;
 
   width: 14rem;
-  margin-bottom: 2rem;
 `;
 
 const Contacts = styled.div`
@@ -84,6 +100,17 @@ const Social = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    width: 80%;
+    justify-content: space-around;
+    justify-self: center;
+
+    img {
+      width: 15%;
+      height: auto;
+    }
+  }
 `;
 
 const Footer = () => {
@@ -116,7 +143,7 @@ const Footer = () => {
           <a href="#/">RSS Feeds</a>
           <a href="#/">Legal</a>
         </Links>
-        <Links style={{ alignItems: "center", gridArea: "wealth" }}>
+        <Links style={{ textAlign: "center", gridArea: "wealth" }}>
           <LinkHead>Your wealth building partners</LinkHead>
           <span>Your wealth building partners</span>
           <span>Invest in real estate simply with us</span>

@@ -27,9 +27,9 @@ const ListingInfo = styled.div`
 
   display: grid;
   align-items: space-between;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 59% 2% 39%;
   grid-template-rows: auto;
-  grid-template-areas: "detail figure";
+  grid-template-areas: "detail divider figure";
   align-items: center;
 `;
 
@@ -78,20 +78,24 @@ const Listing = props => {
         <img src={mexicanHouse} alt="" />
 
         <ListingInfo>
-          <ListingLabel color={COLORS.BLUE} bg={COLORS.LIME}>
-            Hold Period
-          </ListingLabel>
-          <ListingFigure>9 Months</ListingFigure>
+          <div>
+            <ListingLabel color={COLORS.BLUE} bg={COLORS.LIME}>
+              Hold Period
+            </ListingLabel>
+            <ListingLabel color={COLORS.LIME} bg={COLORS.BLUE}>
+              Projected Returns
+            </ListingLabel>
+            <ListingLabel color={COLORS.BLUE} bg={COLORS.BACKGROUND_LIGHT_BLUE}>
+              Structure
+            </ListingLabel>
+          </div>
+          <div>
+            <ListingFigure>9 Months</ListingFigure>
 
-          <ListingLabel color={COLORS.LIME} bg={COLORS.BLUE}>
-            Projected Returns
-          </ListingLabel>
-          <ListingFigure>20%</ListingFigure>
+            <ListingFigure>20%</ListingFigure>
 
-          <ListingLabel color={COLORS.BLUE} bg={COLORS.BACKGROUND_LIGHT_BLUE}>
-            Structure
-          </ListingLabel>
-          <ListingFigure>Debt</ListingFigure>
+            <ListingFigure>Debt</ListingFigure>
+          </div>
         </ListingInfo>
       </ListingStyle>
     </div>

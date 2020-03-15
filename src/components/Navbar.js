@@ -46,6 +46,10 @@ const NavbarStyle = styled.nav`
   }
 `;
 
+const NavButton = styled(Button)`
+  padding: 1rem 4rem;
+`;
+
 const Navbar = props => {
   return (
     <NavbarStyle>
@@ -60,15 +64,9 @@ const Navbar = props => {
         <li>
           <a href="#/">Realsights Blog</a>
         </li>
-        <Button
-          px="4rem"
-          py="1rem"
-          bg="white"
-          borderColor={COLORS.BLUE}
-          color={COLORS.BLUE}
-        >
+        <NavButton bg="white" borderColor={COLORS.BLUE} color={COLORS.BLUE}>
           <a href="#/">Get Started</a>
-        </Button>
+        </NavButton>
         <li>
           <a href="#/">Sign in</a>
         </li>
