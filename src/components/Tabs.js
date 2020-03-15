@@ -15,6 +15,12 @@ const Tab = styled.div`
   border-bottom: ${props => (props.selected ? `solid 3px ${COLORS.BLUE}` : "")};
   /* border-bottom: solid 3px ${COLORS.BLUE}; */
   transform: translateY(2px);
+
+  @media (max-width: 768px) {
+    padding: .5rem 0;
+    margin-right: 4rem;
+    font-size: 60%;
+  }
 `;
 
 const TabGroup = styled.div`
@@ -36,6 +42,7 @@ const TabGrid = styled.div`
   justify-content: center;
   grid-template-columns: 95%;
   grid-template-rows: auto;
+  width: 100vw;
 `;
 
 const Tabs = ({ items, currentTab, onChange }) => {
