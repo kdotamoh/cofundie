@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 // import PropTypes from "prop-types";
-import Headroom from "react-headroom";
+// import Headroom from "react-headroom";
 import styled from "styled-components";
 import { color, space, layout } from "styled-system";
 
 import { COLORS } from "app-constants";
 import { Button } from "components/styled";
-import Listing, { Listings } from "components/Listing";
+
+import Available from "components/Listings/Available";
+import Closed from "components/Listings/Closed";
+import ComingSoon from "components/Listings/ComingSoon";
+import SoldOut from "components/Listings/SoldOut";
+
 import Navbar from "components/Navbar";
 import Header from "components/Header";
 import Tabs from "components/Tabs";
@@ -20,47 +25,6 @@ import earn from "assets/images/earn.png";
 import choose from "assets/images/choose.png";
 import pay from "assets/images/pay.png";
 import tick from "assets/images/tick.png";
-
-const Available = () => {
-  return (
-    <Listings>
-      <Listing />
-      <Listing />
-      <Listing />
-      <Listing />
-    </Listings>
-  );
-};
-
-const ComingSoon = () => {
-  return (
-    <Listings>
-      <Listing />
-      <Listing />
-      <Listing />
-      <Listing />
-    </Listings>
-  );
-};
-
-const Closed = () => {
-  return (
-    <Listings>
-      <Listing />
-    </Listings>
-  );
-};
-
-const SoldOut = () => {
-  return (
-    <Listings>
-      <Listing />
-      <Listing />
-      <Listing />
-      <Listing />
-    </Listings>
-  );
-};
 
 const Section = styled.section`
   ${color}
@@ -80,6 +44,10 @@ const Container = styled.div`
 
 const NewsLogos = styled.img`
   width: 70%;
+
+  @media (max-width: 768px) {
+    width: 95%;
+  }
 `;
 
 const FeatureGrid = styled.div`
@@ -88,6 +56,11 @@ const FeatureGrid = styled.div`
   grid-template-columns: 50% 50%;
   grid-template-rows: auto;
   grid-template-areas: "feature feature";
+
+  @media (max-width: 768px) {
+    grid-template-columns: 100%;
+    grid-template-areas: "feature";
+  }
 `;
 
 const Feature = styled.div`
@@ -107,6 +80,10 @@ const Feature = styled.div`
   p {
     margin-right: 5rem;
   }
+
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+  }
 `;
 
 const ReasonGrid = styled(FeatureGrid)`
@@ -121,6 +98,15 @@ const ReasonGrid = styled(FeatureGrid)`
     width: 50rem;
     height: 30rem;
     border-radius: 6px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 `;
 
@@ -147,42 +133,63 @@ const Reason = styled.p`
     /* background-image:  */
     float: left;
   }
+
+  /* @media (max-width: ) */
 `;
 
-const FlexSection = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-`;
-
-const FlexSectionLeft = styled.div`
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+const GridSection = styled.div`
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "heading image"
+    "paragraph image"
+    "button image";
+  align-items: center;
   text-align: left;
-  font-size: 120%;
-`;
 
-const FlexSectionRight = styled.div`
-  width: 60%;
-  display: flex;
-  flex-direction: column;
+  p {
+    grid-area: paragragh;
+  }
 
   img {
+    grid-area: picture;
     width: 100%;
+  }
+
+  h4 {
+    grid-area: heading;
+    font-size: 125%;
+  }
+
+  button {
+    grid-area: button;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "heading"
+      "paragraph"
+      "button"
+      "image";
+
+    text-align: center;
+
+    img {
+      margin-top: 5rem;
+    }
   }
 `;
 
 const LandingPage = props => {
-  const [previousTab, setPreviousTab] = useState(0);
+  const [previousTab, setPreviousTab] = React.useState(0);
 
   return (
     <LandingPageStyle>
-      <Headroom>
-        <Navbar />
-      </Headroom>
+      {/* <Headroom> */}
+      <Navbar />
+      {/* </Headroom> */}
       <Header />
       <main>
         <Section pt="6rem" pb="2rem">
@@ -272,8 +279,8 @@ const LandingPage = props => {
             Get unprecedented access
           </h2>
           <Container width="85%">
-            <FlexSection>
-              <FlexSectionLeft>
+            <GridSection>
+              <div>
                 <h4 style={{ color: `${COLORS.LIME}`, paddingBottom: "3rem" }}>
                   Diversify your portfolio
                 </h4>
@@ -292,11 +299,11 @@ const LandingPage = props => {
                 >
                   Get Started
                 </Button>
-              </FlexSectionLeft>
-              <FlexSectionRight>
+              </div>
+              <div>
                 <img src={laptop} alt="" />
-              </FlexSectionRight>
-            </FlexSection>
+              </div>
+            </GridSection>
           </Container>
         </Section>
         <Section py="10rem">
