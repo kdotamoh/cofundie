@@ -38,6 +38,12 @@ const NavbarStyle = styled.nav`
       /* } */
     }
   }
+
+  @media (max-width: 768px) {
+    ul {
+      display: none;
+    }
+  }
 `;
 
 const Navbar = props => {

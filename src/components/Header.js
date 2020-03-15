@@ -2,7 +2,7 @@ import React from "react";
 // import PropTypes from "prop-types";
 import styled from "styled-components";
 import { layout, space } from "styled-system";
-import { COLORS } from "app-constants";
+import { COLORS, H1_SIZE_SM } from "app-constants";
 
 import { Button } from "components/styled";
 
@@ -15,20 +15,33 @@ const HeaderStyle = styled.header`
   background-repeat: no-repeat;
 
   h1 {
-    width: 70%;
     color: ${COLORS.BLUE};
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: ${H1_SIZE_SM}rem;
+    }
   }
 `;
 
 const Container = styled.div`
   ${layout}
   ${space}
+
+  width: 70%;
+  padding: 12rem;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    padding: 3rem;
+  }
 `;
 
 const Header = props => {
   return (
     <HeaderStyle>
-      <Container px="12rem" pt="12rem">
+      <Container>
         <h1>
           Find and co-invest in high return real estate from the comfort of your
           home.
