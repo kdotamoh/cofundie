@@ -8,8 +8,6 @@ import { COLORS } from "app-constants";
 import mexicanHouse from "assets/images/house.png";
 
 const ListingStyle = styled.div`
-  /* width: 30vw; */
-  /* height: 70vh; */
   border-radius: 6px;
   background-color: white;
 
@@ -21,26 +19,6 @@ const ListingStyle = styled.div`
     object-fit: contain;
   }
 `;
-
-// const ListingDetails = styled.div`
-//   display: flex;
-//   flex-direction: row;
-
-//   div {
-//     display: flex;
-//     flex-direction: column;
-//   }
-// `;
-
-// const ListingLabels = styled.div`
-//   width: 55%;
-//   border-right: 1px solid black;
-// `;
-
-// const ListingFigures = styled.div`
-//   text-align: left;
-//   padding: 2rem;
-// `;
 
 const ListingInfo = styled.div`
   text-align: left;
@@ -83,18 +61,6 @@ const ListingName = styled.p`
   text-align: left;
   font-weight: 700;
   font-size: 125%;
-`;
-
-export const Listings = styled.div`
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1.5%;
-  grid-template-rows: auto;
-  grid-template-areas: "feature feature";
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-bottom: 10rem;
 `;
 
 const Listing = props => {
