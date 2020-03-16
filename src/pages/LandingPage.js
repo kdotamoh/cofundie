@@ -25,6 +25,7 @@ import earn from "assets/images/earn.png";
 import choose from "assets/images/choose.png";
 import pay from "assets/images/pay.png";
 import tick from "assets/images/tick.png";
+import placeholder from "assets/images/placeholder.png";
 
 const Section = styled.section`
   ${color}
@@ -188,6 +189,66 @@ const GridSection = styled.div`
   }
 `;
 
+const Testimonials = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+const Testimonial = styled.div`
+  display: flex;
+  color: ${COLORS.BLUE};
+  flex-direction: row;
+  border-radius: 6px;
+  align-items: flex-start;
+  padding: 2rem 4rem;
+  box-shadow: 0 0.6px 2.1px rgba(0, 0, 0, 0.017),
+    0 1.4px 5px rgba(0, 0, 0, 0.024), 0 2.6px 9.4px rgba(0, 0, 0, 0.03),
+    0 4.7px 16.8px rgba(0, 0, 0, 0.036), 0 8.8px 31.3px rgba(0, 0, 0, 0.043),
+    0 21px 75px rgba(0, 0, 0, 0.06);
+  width: 35vw;
+  margin: 1.5rem;
+
+  img {
+    border-radius: 50%;
+    width: 10rem;
+    margin-right: 1.5rem;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 768px) {
+    img {
+      width: 7.5rem;
+    }
+    width: 85vw;
+  }
+`;
+
+const TestimonialName = styled.span`
+  font-weight: 700;
+  display: block;
+`;
+
+const TestimonialPosition = styled.span`
+  display: block;
+  text-align: left;
+  margin-bottom: 1.5rem;
+`;
+
+const TestimonialQuote = styled.p`
+  text-align: left;
+`;
+
 const LandingPage = props => {
   const [previousTab, setPreviousTab] = React.useState(0);
 
@@ -324,8 +385,44 @@ const LandingPage = props => {
             </Reasons>
           </ReasonGrid>
         </Section>
-        <Section py="10rem">
-          <h2>Testimonials</h2>
+        <Section pb="10rem">
+          <h2 style={{ marginBottom: "3rem" }}>Testimonials</h2>
+
+          <Testimonials>
+            <Testimonial>
+              <img src={placeholder} alt="" />
+              <div>
+                <TestimonialName>Kelvin Nyame</TestimonialName>
+                <TestimonialPosition>CEO - MeQasa</TestimonialPosition>
+                <TestimonialQuote>
+                  "This company is going to change the way the real estate
+                  industry operates."
+                </TestimonialQuote>
+              </div>
+            </Testimonial>
+            <Testimonial>
+              <img src={placeholder} alt="" />
+              <div>
+                <TestimonialName>Kelvin Nyame</TestimonialName>
+                <TestimonialPosition>CEO - MeQasa</TestimonialPosition>
+                <TestimonialQuote>
+                  "This company is going to change the way the real estate
+                  industry operates."
+                </TestimonialQuote>
+              </div>
+            </Testimonial>
+            <Testimonial>
+              <img src={placeholder} alt="" />
+              <div>
+                <TestimonialName>Kelvin Nyame</TestimonialName>
+                <TestimonialPosition>CEO - MeQasa</TestimonialPosition>
+                <TestimonialQuote>
+                  "This company is going to change the way the real estate
+                  industry operates."
+                </TestimonialQuote>
+              </div>
+            </Testimonial>
+          </Testimonials>
         </Section>
         <Section bg={COLORS.BLUE} py="10rem" color="white">
           <Container width="70%">
