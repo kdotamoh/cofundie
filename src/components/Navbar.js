@@ -6,6 +6,7 @@ import { Button } from "components/styled";
 import { COLORS } from "app-constants";
 
 import logo from "assets/images/cofundie-logo.png";
+import menu from "assets/images/svg/hamburger.svg";
 
 const NavbarStyle = styled.nav`
   background-color: white;
@@ -40,37 +41,74 @@ const NavbarStyle = styled.nav`
   }
 
   @media (max-width: 768px) {
-    ul {
-      display: none;
+    padding: 1rem;
+    > * {
+      margin-right: unset;
+    }
+
+    img {
     }
   }
 `;
 
 const NavButton = styled(Button)`
   padding: 1rem 4rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+  }
 `;
 
 const Navbar = props => {
+  const [width, setWidth] = React.useState(0);
+
+  const updateWindowDimensions = () => {
+    setWidth(window.innerWidth);
+  };
+
+  React.useEffect(() => {
+    updateWindowDimensions();
+    window.addEventListener("resize", updateWindowDimensions);
+
+    return () => {
+      // Clean up
+      window.removeEventListener("resize", updateWindowDimensions);
+    };
+  });
+
   return (
     <NavbarStyle>
-      <img src={logo} alt="" />
-      <ul>
-        <li>
-          <a href="#/">About</a>
-        </li>
-        <li>
-          <a href="#/">FAQ</a>
-        </li>
-        <li>
-          <a href="#/">Realsights Blog</a>
-        </li>
-        <NavButton bg="white" borderColor={COLORS.BLUE} color={COLORS.BLUE}>
-          <a href="#/">Get Started</a>
-        </NavButton>
-        <li>
-          <a href="#/">Sign in</a>
-        </li>
-      </ul>
+      {width > 900 ? (
+        <>
+          <img src={logo} alt="" />
+          <ul>
+            <li>
+              <a href="#/">About</a>
+            </li>
+            <li>
+              <a href="#/">FAQ</a>
+            </li>
+            <li>
+              <a href="#/">Realsights Blog</a>
+            </li>
+            <NavButton bg="white" borderColor={COLORS.BLUE} color={COLORS.BLUE}>
+              <a href="#/">Get Started</a>
+            </NavButton>
+            <li>
+              <a href="#/">Sign in</a>
+            </li>
+          </ul>
+        </>
+      ) : (
+        <>
+          <img style={{ width: "8rem", height: "auto" }} src={logo} alt="" />
+          <NavButton bg="white" borderColor={COLORS.BLUE} color={COLORS.BLUE}>
+            <a href="#/">Get Started</a>
+          </NavButton>
+          <img style={{ width: "2.5rem", height: "auto" }} src={menu} alt="" />
+        </>
+      )}
     </NavbarStyle>
   );
 };
