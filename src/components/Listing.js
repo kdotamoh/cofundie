@@ -4,10 +4,17 @@ import styled from "styled-components";
 import { color } from "styled-system";
 
 import { COLORS } from "app-constants";
+// import useIntersect from "hooks/useIntersect";
 
 import mexicanHouse from "assets/images/house.png";
 
-const ListingStyle = styled.div`
+const ListingStyle = styled.div.attrs(props => ({
+  style: {
+    // opacity: props.ratio || 0.75
+  }
+}))``;
+
+const Card = styled.div`
   border-radius: 6px;
   background-color: white;
 
@@ -17,6 +24,10 @@ const ListingStyle = styled.div`
     width: 100%;
     height: auto;
     object-fit: contain;
+  }
+
+  @media (max-width: 768px) {
+    width: 80vw;
   }
 `;
 
@@ -31,6 +42,10 @@ const ListingInfo = styled.div`
   grid-template-rows: auto;
   grid-template-areas: "detail divider figure";
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+  }
 `;
 
 const ListingFigure = styled.div`
@@ -39,6 +54,11 @@ const ListingFigure = styled.div`
   margin-bottom: 1rem;
   margin-left: 2rem;
   font-size: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+  }
 `;
 
 const ListingLabel = styled.span`
@@ -63,9 +83,24 @@ const ListingName = styled.p`
   font-size: 125%;
 `;
 
+// const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
+// const thresholds = [];
+// for (let i = 75; i < 100; i++) {
+//   thresholds.push(Number((i * 0.01).toFixed(2)));
+// }
+// console.log(thresholds);
+
 const Listing = props => {
+  // const [ref, entry] = useIntersect({
+  //   threshold: buildThresholdArray()
+  //   // threshold: thresholds
+  // });
   return (
-    <div style={{ marginBottom: "6rem" }}>
+    <ListingStyle
+      style={{ marginBottom: "6rem" }}
+      // ref={ref}
+      // ratio={entry.intersectionRatio}
+    >
       <ListingName>
         <span style={{ color: `${COLORS.BLUE}` }}>The Place:</span> Single
         Family Unit
@@ -74,7 +109,7 @@ const Listing = props => {
         Cantonment, Accra-Ghana
       </ListingLocation>
 
-      <ListingStyle>
+      <Card>
         <img src={mexicanHouse} alt="" />
 
         <ListingInfo>
@@ -97,8 +132,8 @@ const Listing = props => {
             <ListingFigure>Debt</ListingFigure>
           </div>
         </ListingInfo>
-      </ListingStyle>
-    </div>
+      </Card>
+    </ListingStyle>
   );
 };
 

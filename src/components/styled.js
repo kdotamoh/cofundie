@@ -10,13 +10,13 @@ export const Button = styled.button`
   
 
   background-color: ${props => props.bg};
+  /* ${props => props.borderColor && `border: ${props.borderColor}`}; */
   border-color: ${props => (props.borderColor ? props.borderColor : props.bg)};
   border-radius: 2px;
   color: ${props => props.color};
   font-size: 2.4rem;
   padding: 1.6rem 6rem;
   display: inline-block;
-  border: none;
   text-decoration: none;
   cursor: pointer;
   text-align: center;

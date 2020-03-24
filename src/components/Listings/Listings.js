@@ -14,7 +14,7 @@ const ListingsStyle = styled.div`
   }
 
   @media (max-width: 767px) {
-    grid-gap: 6%;
+    grid-gap: 10%;
 
     overflow-x: scroll;
     overflow-y: hidden;
@@ -29,7 +29,7 @@ const ListingsStyle = styled.div`
 const Listings = ({ listings }) => {
   return (
     <ListingsStyle>
-      {listings && listings.map(listing => <Listing />)}
+      {listings && listings.map(listing => <Listing key={listing} />)}
     </ListingsStyle>
   );
 };
