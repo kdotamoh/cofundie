@@ -3,6 +3,7 @@ import React from "react";
 // import Headroom from "react-headroom";
 import styled from "styled-components";
 import { color, space, layout } from "styled-system";
+import lazysizes from "lazysizes";
 
 import { COLORS } from "app-constants";
 import { Button } from "components/styled";
@@ -309,28 +310,28 @@ const LandingPage = props => {
           <h3 style={{ paddingBottom: "10rem" }}>How It Works</h3>
           <FeatureGrid>
             <Feature>
-              <img src={create} alt="" />
+              <img data-src={create} className="lazyload" alt="" />
               <p>
                 Create your Cofundie account and complete your profile using
                 valid email &amp; phone numbers
               </p>
             </Feature>
             <Feature>
-              <img src={choose} alt="" />
+              <img data-src={choose} className="lazyload" alt="" />
               <p>
                 Choose a property to Co-fund, you can get multiple slots in one
                 property as well as multiple properties
               </p>
             </Feature>
             <Feature>
-              <img src={pay} alt="" />
+              <img data-src={pay} className="lazyload" alt="" />
               <p>
                 Choose one of the payment methods &amp; complete payment to
                 co-own the property(s)
               </p>
             </Feature>
             <Feature>
-              <img src={earn} alt="" />
+              <img data-src={earn} className="lazyload" alt="" />
               <p>Start earning annually on the income from your property</p>
             </Feature>
           </FeatureGrid>
@@ -356,7 +357,7 @@ const LandingPage = props => {
                 </Button>
               </div>
               <div>
-                <img src={laptop} alt="" />
+                <img data-src={laptop} className="lazyload" alt="" />
               </div>
             </GridSection>
           </Container>
@@ -372,7 +373,7 @@ const LandingPage = props => {
             </p>
           </Container>
           <ReasonGrid mt="4rem">
-            <img src={whiteHouse} alt="" />
+            <img data-src={whiteHouse} className="lazyload" alt="" />
             <Reasons>
               <Reason>All partners are vetted intensively</Reason>
               <Reason>
@@ -390,7 +391,7 @@ const LandingPage = props => {
 
           <Testimonials>
             <Testimonial>
-              <img src={placeholder} alt="" />
+              <img data-src={placeholder} className="lazyload" alt="" />
               <div>
                 <TestimonialName>Kelvin Nyame</TestimonialName>
                 <TestimonialPosition>CEO - MeQasa</TestimonialPosition>
@@ -401,7 +402,7 @@ const LandingPage = props => {
               </div>
             </Testimonial>
             <Testimonial>
-              <img src={placeholder} alt="" />
+              <img data-src={placeholder} className="lazyload" alt="" />
               <div>
                 <TestimonialName>Kelvin Nyame</TestimonialName>
                 <TestimonialPosition>CEO - MeQasa</TestimonialPosition>
@@ -412,7 +413,7 @@ const LandingPage = props => {
               </div>
             </Testimonial>
             <Testimonial>
-              <img src={placeholder} alt="" />
+              <img data-src={placeholder} className="lazyload" alt="" />
               <div>
                 <TestimonialName>Kelvin Nyame</TestimonialName>
                 <TestimonialPosition>CEO - MeQasa</TestimonialPosition>
