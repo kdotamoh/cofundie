@@ -3,7 +3,7 @@ import React from "react";
 // import Headroom from "react-headroom";
 import styled from "styled-components";
 import { color, space, layout } from "styled-system";
-import lazysizes from "lazysizes";
+import lazysizes from "lazysizes"; // eslint-disable-line
 
 import { COLORS } from "app-constants";
 import { Button } from "components/styled";
@@ -20,7 +20,11 @@ import Footer from "components/Footer";
 
 import newsLogos from "assets/images/news-logos.png";
 import laptop from "assets/images/macbook.png";
+import laptopM from "assets/images/macbook-mobile.png";
+import laptopT from "assets/images/macbook-tablet.png";
 import whiteHouse from "assets/images/white-house.png";
+import whiteHouseM from "assets/images/white-house-mobile.png";
+import whiteHouseT from "assets/images/white-house-tablet.png";
 import create from "assets/images/create.png";
 import earn from "assets/images/earn.png";
 import choose from "assets/images/choose.png";
@@ -357,7 +361,12 @@ const LandingPage = props => {
                 </Button>
               </div>
               <div>
-                <img data-src={laptop} className="lazyload" alt="" />
+                <img
+                  data-src={laptop}
+                  data-srcset={`${laptopM} 200w, ${laptopT} 484w, ${laptop} 900w`}
+                  className="lazyload"
+                  alt=""
+                />
               </div>
             </GridSection>
           </Container>
@@ -373,7 +382,12 @@ const LandingPage = props => {
             </p>
           </Container>
           <ReasonGrid mt="4rem">
-            <img data-src={whiteHouse} className="lazyload" alt="" />
+            <img
+              data-src={whiteHouse}
+              data-srcset={`${whiteHouseM} 200w, ${whiteHouseT} 484w, ${whiteHouse} 900w`}
+              className="lazyload"
+              alt=""
+            />
             <Reasons>
               <Reason>All partners are vetted intensively</Reason>
               <Reason>
