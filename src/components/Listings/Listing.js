@@ -6,8 +6,6 @@ import { color } from "styled-system";
 import { COLORS } from "app-constants";
 // import useIntersect from "hooks/useIntersect";
 
-import mexicanHouse from "assets/images/house.png";
-
 const ListingStyle = styled.div.attrs(props => ({
   style: {
     // opacity: props.ratio || 0.75
@@ -18,16 +16,20 @@ const Card = styled.div`
   border-radius: 6px;
   background-color: white;
 
-  img {
-    border-radius: 6px;
-    object-fit: contain;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
   @media (max-width: 768px) {
     width: 80vw;
+  }
+`;
+
+const ListingImage = styled.img`
+  border-radius: 6px;
+  object-fit: contain;
+  width: 100%;
+  height: 35rem;
+  object-fit: cover;
+
+  @media (max-width: 768px) {
+    height: 25rem;
   }
 `;
 
@@ -75,12 +77,13 @@ const ListingLabel = styled.span`
 
 const ListingLocation = styled.p`
   text-align: left;
+  font-size: 90%;
 `;
 
 const ListingName = styled.p`
   text-align: left;
   font-weight: 700;
-  font-size: 125%;
+  font-size: 110%;
 `;
 
 // const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
@@ -90,11 +93,12 @@ const ListingName = styled.p`
 // }
 // console.log(thresholds);
 
-const Listing = props => {
+const Listing = ({ listing: data }) => {
   // const [ref, entry] = useIntersect({
   //   threshold: buildThresholdArray()
   //   // threshold: thresholds
   // });
+
   return (
     <ListingStyle
       style={{ marginBottom: "6rem" }}
@@ -102,15 +106,14 @@ const Listing = props => {
       // ratio={entry.intersectionRatio}
     >
       <ListingName>
-        <span style={{ color: `${COLORS.BLUE}` }}>The Place:</span> Single
-        Family Unit
+        <span style={{ color: `${COLORS.BLUE}` }}>The Place:</span> {data.name}
       </ListingName>
       <ListingLocation style={{ marginBottom: "2rem" }}>
-        Cantonment, Accra-Ghana
+        Accra-Ghana
       </ListingLocation>
 
       <Card>
-        <img src={mexicanHouse} alt="" />
+        <ListingImage src={data.images ? data.images[0] : ""} alt="" />
 
         <ListingInfo>
           <div>
@@ -125,11 +128,15 @@ const Listing = props => {
             </ListingLabel>
           </div>
           <div>
-            <ListingFigure>9 Months</ListingFigure>
-
-            <ListingFigure>20%</ListingFigure>
-
-            <ListingFigure>Debt</ListingFigure>
+            <ListingFigure>
+              {data.details ? data.details.holdPeriod : null}
+            </ListingFigure>
+            <ListingFigure>
+              {data.details ? data.details.projectedReturn : null}
+            </ListingFigure>
+            <ListingFigure>
+              {data.details ? data.details.structure : null}
+            </ListingFigure>
           </div>
         </ListingInfo>
       </Card>

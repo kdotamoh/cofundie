@@ -33,8 +33,13 @@ const TabGroup = styled.div`
 `;
 
 const TabPanel = styled.div`
+  min-height: 65rem;
   position: relative;
   overflow-x: hidden;
+
+  @media (max-width: 768px) {
+    min-height: 53rem;
+  }
 `;
 
 const TabGrid = styled.div`
@@ -58,13 +63,14 @@ const Tabs = ({ items, currentTab, onChange }) => {
     },
     enter: {
       transform: "translate3d(0%,0,0)",
-      position: "static"
+      position: "static",
+      opacity: 1
     },
     leave: tab => ({
       transform: `translate3d(${(previousTab - currentTab) * 100}%,0,0)`,
       zIndex: 1,
-      position: "absolute",
-      boxShadow: "0px 0px 5px #000"
+      opacity: 0,
+      position: "absolute"
     })
   });
   if (currentTab !== previousTab) setPreviousTab(currentTab);

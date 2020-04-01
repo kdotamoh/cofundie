@@ -1,10 +1,12 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import Listings from "./Listings";
 
-const ComingSoon = () => {
-  const listings = [1];
+const ComingSoon = ({ data: listings }) => {
   return <Listings listings={listings} />;
 };
 
-export default ComingSoon;
+export default connect(state => ({
+  data: state.listings.data
+}))(ComingSoon);

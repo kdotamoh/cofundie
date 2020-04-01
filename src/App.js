@@ -61,7 +61,7 @@ const listingsData = [
       </p>`,
     details: {
       sharePrice: "$250",
-      structure: "debt",
+      structure: "Debt",
       projectedReturn: "15%",
       holdPeriod: "12 months",
       primaryMaterial: "Concrete mix"
@@ -106,7 +106,7 @@ const listingsData = [
       </p>`,
     details: {
       sharePrice: "$250",
-      structure: "debt",
+      structure: "Debt",
       projectedReturn: "15%",
       holdPeriod: "12 months",
       primaryMaterial: "Concrete mix"
@@ -128,7 +128,7 @@ const listingsData = [
     location: `<p>TBD</p>`,
     details: {
       sharePrice: "$200",
-      structure: "debt",
+      structure: "Debt",
       projectedReturn: "15%",
       holdPeriod: "12 months",
       primaryMaterial: "Earth bricks"

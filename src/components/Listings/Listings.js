@@ -29,7 +29,8 @@ const ListingsStyle = styled.div`
 const Listings = ({ listings }) => {
   return (
     <ListingsStyle>
-      {listings && listings.map(listing => <Listing key={listing} />)}
+      {listings &&
+        listings.map(listing => <Listing listing={listing} key={listing.id} />)}
     </ListingsStyle>
   );
 };

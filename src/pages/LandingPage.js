@@ -275,14 +275,14 @@ const LandingPage = props => {
             onChange={setPreviousTab}
             items={[
               {
-                label: "Available",
+                label: "Coming Soon",
                 key: 1,
-                component: <Available />
+                component: <ComingSoon />
               },
               {
-                label: "Coming Soon",
+                label: "Available",
                 key: 2,
-                component: <ComingSoon />
+                component: <Available />
               },
               {
                 label: "Closed",
