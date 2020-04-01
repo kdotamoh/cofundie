@@ -1,9 +1,13 @@
 import React from "react";
+import { connect } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 
 import theme from "app-constants/theme";
+
+import store from "store";
+import { setListings } from "store/listings";
 
 import gemini1 from "assets/images/gemini/1.jpg";
 import gemini2 from "assets/images/gemini/2.jpg";
@@ -135,6 +139,12 @@ const listingsData = [
 ];
 
 function App() {
+  React.useEffect(() => {
+    store.dispatch(setListings(listingsData));
+    // return () => {
+    //   cleanup
+    // }
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
