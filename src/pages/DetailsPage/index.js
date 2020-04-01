@@ -185,7 +185,7 @@ const DetailsPage = ({ listings, match }) => {
             <DetailsContainer width={{ sm: "85vw", lg: "60vw" }}>
               <DetailsSection my="5rem">
                 <h3 style={{ marginBottom: "2rem" }}>Deal Breakdown</h3>
-                <DealBreakdown />
+                <DealBreakdown data={data} />
               </DetailsSection>
             </DetailsContainer>
             <Section>

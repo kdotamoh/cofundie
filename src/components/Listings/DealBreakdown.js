@@ -8,14 +8,14 @@ const ListingInfo = styled.div`
   /* ${layout} */
   text-align: left;
   font-weight: 700;
-  padding: 2rem 4rem;
+  padding: 4rem;
   background-color: white;
   border-radius: 4px;
   width: 100%;
 
   display: grid;
   align-items: space-between;
-  grid-template-columns: 59% 2% 39%;
+  grid-template-columns: 49% 2% 49%;
   grid-template-rows: auto;
   grid-template-areas: "detail divider figure";
   align-items: center;
@@ -29,11 +29,13 @@ const ListingInfo = styled.div`
 const ListingLabel = styled.span`
   ${color}
 
-  margin-bottom: 1rem;
-  width: fit-content;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  width: 70%;
+  text-align: center;
   border-radius: 4px;
   display: block;
-  padding: 0.5rem 2rem;
+  padding: 2rem 2rem;
   color: ${props => props.color};
   background-color: ${props => props.bg};
 `;
@@ -47,9 +49,10 @@ const Divider = styled.div`
 const ListingFigure = styled.div`
   ${color}
 
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
   margin-left: 2rem;
-  font-size: 2rem;
+  font-size: 2.2rem;
+  padding: 2rem 2rem;
 
   @media (max-width: 768px) {
     font-size: 1.6rem;
@@ -57,7 +60,7 @@ const ListingFigure = styled.div`
   }
 `;
 
-const DealBreakdown = () => {
+const DealBreakdown = ({ data }) => {
   return (
     <ListingInfo>
       <div>
@@ -70,14 +73,22 @@ const DealBreakdown = () => {
         <ListingLabel color={COLORS.BLUE} bg={COLORS.BACKGROUND_LIGHT_BLUE}>
           Structure
         </ListingLabel>
+        <ListingLabel color={COLORS.BLUE} bg={COLORS.LIGHT_LIME}>
+          Primary Material
+        </ListingLabel>
+        <ListingLabel color="white" bg={COLORS.BLUE}>
+          Cost Per Share
+        </ListingLabel>
       </div>
       <Divider />
       <div>
-        <ListingFigure>9 Months</ListingFigure>
+        <ListingFigure>{data.details.holdPeriod}</ListingFigure>
+        <ListingFigure>{data.details.projectedReturn}</ListingFigure>
 
-        <ListingFigure>20%</ListingFigure>
+        <ListingFigure>{data.details.structure}</ListingFigure>
 
-        <ListingFigure>Debt</ListingFigure>
+        <ListingFigure>{data.details.primaryMaterial}</ListingFigure>
+        <ListingFigure>{data.details.sharePrice}</ListingFigure>
       </div>
     </ListingInfo>
   );
