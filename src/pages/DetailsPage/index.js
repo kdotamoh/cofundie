@@ -40,11 +40,15 @@ export const Image = styled.img`
   @media (max-width: 768px) {
     width: 80vw;
     height: 22rem;
+
+    &:last-child {
+      margin-right: 1.5rem;
+    }
   }
 `;
 
 const ImageGallery = styled.div`
-  /* mobile first */
+  /* MOBILE STYLES FIRST */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -52,12 +56,18 @@ const ImageGallery = styled.div`
 
   * {
     flex: 0 0 auto;
+    margin: 0;
+    margin-left: 1.5rem;
   }
 
   @media (min-width: 768px) {
     width: 60vw;
     margin: 0 auto;
     transform: translateY(-3rem);
+
+    * {
+      margin: 0;
+    }
   }
 `;
 
@@ -166,9 +176,6 @@ const DetailsPage = ({ listings, match }) => {
               {data.images.map((image, id) => (
                 <Image key={id} src={image} />
               ))}
-              {/* <Image src={house} />
-              <Image src={house} />
-              <Image src={house} /> */}
             </ImageGallery>
             <DetailsContainer width="60vw">
               <DetailsSection my="5rem" textAlign="left">
