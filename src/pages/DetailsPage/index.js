@@ -109,14 +109,18 @@ const CloseModal = styled.img`
   /* left: 95%; */
   right: 5rem;
   height: 3rem;
+
+  @media (max-width: 768px) {
+    right: 1.5rem;
+    height: 1.5rem;
+  }
 `;
 
 const DetailsPage = ({ listings, match }) => {
   const [data, setData] = React.useState("loading");
   const [status, setStatus] = React.useState("loading");
   const [selectedImage, setSelectedImage] = React.useState("");
-  const [formVisible, setFormVisible] = React.useState(false);
-  const [joinSuccessVisible, setJoinSuccessVisible] = React.useState(false);
+  const [visible, setVisible] = React.useState(false);
 
   let { id } = match.params;
 
@@ -150,7 +154,7 @@ const DetailsPage = ({ listings, match }) => {
                 color={COLORS.BLUE}
                 borderColor={COLORS.BLUE}
                 boxShadow="true"
-                onClick={() => setFormVisible(true)}
+                onClick={() => setVisible(true)}
               >
                 Join the Waitlist
               </Button>
@@ -191,7 +195,7 @@ const DetailsPage = ({ listings, match }) => {
                 color={COLORS.BLUE}
                 borderColor={COLORS.BLUE}
                 boxShadow="true"
-                onClick={() => setFormVisible(true)}
+                onClick={() => setVisible(true)}
               >
                 Join the Waitlist
               </Button>
@@ -221,7 +225,7 @@ const DetailsPage = ({ listings, match }) => {
         )}
       </main>
       <Modal
-        isOpen={formVisible}
+        isOpen={!visible}
         style={{
           overlay: {
             position: "fixed",
@@ -237,7 +241,6 @@ const DetailsPage = ({ listings, match }) => {
             left: "15vw",
             right: "15vw",
             bottom: "4rem",
-            // height: "content-fit",
             border: "none",
             background: "#fff",
             overflow: "auto",
@@ -248,14 +251,8 @@ const DetailsPage = ({ listings, match }) => {
           }
         }}
       >
-        <CloseModal src={cancel} alt="" onClick={() => setFormVisible(false)} />
+        <CloseModal src={cancel} alt="" onClick={() => setVisible(false)} />
         <WaitListForm />
-      </Modal>
-
-      <Modal isOpen={joinSuccessVisible}>
-        <p>":)"</p>
-        <button onClick={() => setJoinSuccessVisible(false)}>Close</button>
-        <p>Success</p>
       </Modal>
       <Footer />
     </DetailsPageStyle>
