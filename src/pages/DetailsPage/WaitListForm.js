@@ -94,7 +94,7 @@ const Success = styled.div`
 `;
 
 const WaitListForm = () => {
-  const [status, setStatus] = React.useState("submitted");
+  const [status, setStatus] = React.useState("unsubmitted");
   const history = useHistory();
 
   return (

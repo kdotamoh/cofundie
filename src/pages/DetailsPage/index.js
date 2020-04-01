@@ -225,7 +225,7 @@ const DetailsPage = ({ listings, match }) => {
         )}
       </main>
       <Modal
-        isOpen={!visible}
+        isOpen={visible}
         style={{
           overlay: {
             position: "fixed",

@@ -1,16 +1,20 @@
 import React from "react";
 // import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { color } from "styled-system";
 
 import { COLORS } from "app-constants";
 // import useIntersect from "hooks/useIntersect";
 
-const ListingStyle = styled.div.attrs(props => ({
-  style: {
-    // opacity: props.ratio || 0.75
-  }
-}))``;
+// const ListingStyle = styled.div.attrs(props => ({
+//   style: {
+//     // opacity: props.ratio || 0.75
+//   }
+// }))``;
+const ListingStyle = styled.div`
+  cursor: pointer;
+`;
 
 const Card = styled.div`
   border-radius: 6px;
@@ -98,10 +102,11 @@ const Listing = ({ listing: data }) => {
   //   threshold: buildThresholdArray()
   //   // threshold: thresholds
   // });
-
+  const history = useHistory();
   return (
     <ListingStyle
       style={{ marginBottom: "6rem" }}
+      onClick={() => history.push(`/details/${data.id}`)}
       // ref={ref}
       // ratio={entry.intersectionRatio}
     >
