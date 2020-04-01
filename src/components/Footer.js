@@ -12,7 +12,7 @@ const FooterStyle = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 12rem;
+  padding-top: 8rem;
 `;
 
 const FooterGrid = styled.div`
