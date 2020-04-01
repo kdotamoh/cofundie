@@ -19,14 +19,15 @@ import { Button } from "components/styled";
 import { COLORS } from "app-constants";
 
 import cancel from "assets/images/cancel.svg";
+import bullet from "assets/images/bullet.svg";
 
 const DetailsPageStyle = styled(PageStyle)`
   background-color: rgba(20, 55, 155, 0.02);
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right,
     ${COLORS.BACKGROUND_LIGHT_BLUE} 50%,
     ${COLORS.LIGHT_LIME}
-  );
+  ); */
 `;
 
 const ListingTitle = styled.h3`
@@ -106,13 +107,17 @@ const DetailsSection = styled(Section)`
   ul {
     list-style: none;
 
-    /* li {
-      margin-left: 2rem;
-
+    li {
       &::before {
-        content: ;
+        content: "";
+        display: block;
+        background: url(${bullet}) no-repeat;
+        width: 10px;
+        height: 10px;
+        float: left;
+        margin: 5px 15px 0px 0;
       }
-    } */
+    }
   }
 
   @media (max-width: 768px) {

@@ -48,6 +48,7 @@ const listingsData = [
       that end, the strategy is to make it possible for people in different economic demographics to afford 
       housing within the city. <br/><br/>
       Upon completion, Appolonia City will feature the following amenities:
+      <br/><br/>
       <ul>
         <li>25,000 housing units (100,000 residents)</li>
         <li>A 200-acre modern business and industrial park</li>
@@ -93,6 +94,7 @@ const listingsData = [
       that end, the strategy is to make it possible for people in different economic demographics to afford 
       housing within the city. <br/><br/>
       Upon completion, Appolonia City will feature the following amenities:
+      <br/><br/>
       <ul>
         <li>25,000 housing units (100,000 residents)</li>
         <li>A 200-acre modern business and industrial park</li>
