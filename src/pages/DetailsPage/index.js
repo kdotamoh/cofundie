@@ -60,7 +60,6 @@ const ImageGallery = styled.div`
   flex-direction: row;
   flex-wrap: nowrap;
   overflow-x: auto;
-  box-shadow: 0 23px 52px rgba(0, 0, 0, 0.2);
 
   * {
     flex: 0 0 auto;
