@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Listing from "components/Listing";
+import Listing from "./Listing";
 
 const ListingsStyle = styled.div`
   display: grid;

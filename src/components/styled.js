@@ -21,9 +21,19 @@ export const Button = styled.button`
   cursor: pointer;
   text-align: center;
   transition: background 250ms ease-in-out, transform 150ms ease;
+  box-shadow: ${props =>
+    props.boxShadow ? "2px 6px 4px 0 rgba(0,0,0,0.15);" : "none"}; 
+  
 
   @media (max-width: 768px) {
   padding: 1.2rem 3rem;
     font-size: 1.6rem
   }
+`;
+
+export const PageStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* background-color: red; */
 `;

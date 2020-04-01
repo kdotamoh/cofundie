@@ -2,11 +2,12 @@ import React from "react";
 // import PropTypes from "prop-types";
 // import Headroom from "react-headroom";
 import styled from "styled-components";
-import { color, space, layout } from "styled-system";
+import { layout } from "styled-system";
 import lazysizes from "lazysizes"; // eslint-disable-line
 
 import { COLORS } from "app-constants";
 import { Button } from "components/styled";
+import { PageStyle, Section, Container } from "components/layout";
 
 import Available from "components/Listings/Available";
 import Closed from "components/Listings/Closed";
@@ -31,22 +32,6 @@ import choose from "assets/images/choose.png";
 import pay from "assets/images/pay.png";
 import tick from "assets/images/tick.png";
 import placeholder from "assets/images/placeholder.png";
-
-const Section = styled.section`
-  ${color}
-  ${space}
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  text-align: center;
-`;
-
-const Container = styled.div`
-  ${layout}
-  ${color}
-`;
 
 const NewsLogos = styled.img`
   width: 70%;
@@ -253,6 +238,8 @@ const TestimonialPosition = styled.span`
 const TestimonialQuote = styled.p`
   text-align: left;
 `;
+
+const LandingPageStyle = styled(PageStyle)``;
 
 const LandingPage = props => {
   const [previousTab, setPreviousTab] = React.useState(0);
@@ -461,11 +448,4 @@ const LandingPage = props => {
 
 LandingPage.propTypes = {};
 
-const LandingPageStyle = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  /* background-color: red; */
-`;
-
-export default styled(LandingPage)``;
+export default LandingPage;
