@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./GlobalStyles";
+import ScrollToTop from "components/ScrollToTop";
 
 import theme from "app-constants/theme";
 
@@ -152,6 +153,7 @@ function App() {
       <GlobalStyles />
 
       <Router>
+        <ScrollToTop />
         <Switch>
           <Route path="/details/:id" component={DetailsPage}>
             {/* <DetailsPage /> */}

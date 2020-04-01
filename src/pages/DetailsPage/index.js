@@ -220,7 +220,7 @@ const DetailsPage = ({ listings, match }) => {
               </Button>
             </Section>
             <Section bg={COLORS.BLUE} mt="15rem" py="5rem" color="white">
-              <Container width="90%">
+              <Container width="70%">
                 <h3 style={{ color: "white" }}>
                   Join thousands of Property Owners, Agents and Individuals that
                   love using Cofundie.
