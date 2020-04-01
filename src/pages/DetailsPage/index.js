@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import { space } from "styled-system";
 import { isEmpty } from "lodash";
+import Modal from "react-modal";
 
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
@@ -12,6 +13,7 @@ import {
   Container
   // HorizontalScroll
 } from "components/layout";
+import WaitListForm from "./WaitListForm";
 import DealBreakdown from "components/Listings/DealBreakdown";
 import { Button } from "components/styled";
 import { COLORS } from "app-constants";
@@ -103,6 +105,8 @@ const DetailsPage = ({ listings, match }) => {
   const [data, setData] = React.useState("loading");
   const [status, setStatus] = React.useState("loading");
   const [selectedImage, setSelectedImage] = React.useState("");
+  const [formVisible, setFormVisible] = React.useState(false);
+  const [joinSuccessVisible, setJoinSuccessVisible] = React.useState(false);
 
   let { id } = match.params;
 
@@ -136,6 +140,7 @@ const DetailsPage = ({ listings, match }) => {
                 color={COLORS.BLUE}
                 borderColor={COLORS.BLUE}
                 boxShadow="true"
+                onClick={() => setFormVisible(true)}
               >
                 Join the Waitlist
               </Button>
@@ -144,8 +149,8 @@ const DetailsPage = ({ listings, match }) => {
             <SelectedImage src={selectedImage} />
 
             <ImageGallery mt="5rem">
-              {data.images.map(image => (
-                <Image src={image} />
+              {data.images.map((image, id) => (
+                <Image key={id} src={image} />
               ))}
               {/* <Image src={house} />
               <Image src={house} />
@@ -203,6 +208,18 @@ const DetailsPage = ({ listings, match }) => {
           </>
         )}
       </main>
+      {/* about 70vw wide */}
+      <Modal isOpen={formVisible}>
+        <p>":)"</p>
+        <button onClick={() => setFormVisible(false)}>Close</button>
+        <WaitListForm />
+      </Modal>
+
+      <Modal isOpen={joinSuccessVisible}>
+        <p>":)"</p>
+        <button onClick={() => setJoinSuccessVisible(false)}>Close</button>
+        <p>Success</p>
+      </Modal>
       <Footer />
     </DetailsPageStyle>
   );
