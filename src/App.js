@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./GlobalStyles";
@@ -61,6 +60,7 @@ const listingsData = [
       </p>`,
     details: {
       sharePrice: "$250",
+      structure: "debt",
       projectedReturn: "15%",
       holdPeriod: "12 months",
       primaryMaterial: "Concrete mix"
@@ -106,6 +106,7 @@ const listingsData = [
       </p>`,
     details: {
       sharePrice: "$250",
+      structure: "debt",
       projectedReturn: "15%",
       holdPeriod: "12 months",
       primaryMaterial: "Concrete mix"
@@ -127,6 +128,7 @@ const listingsData = [
     location: `<p>TBD</p>`,
     details: {
       sharePrice: "$200",
+      structure: "debt",
       projectedReturn: "15%",
       holdPeriod: "12 months",
       primaryMaterial: "Earth bricks"
@@ -151,8 +153,8 @@ function App() {
 
       <Router>
         <Switch>
-          <Route path="/details/:id">
-            <DetailsPage />
+          <Route path="/details/:id" component={DetailsPage}>
+            {/* <DetailsPage /> */}
           </Route>
           <Route path="/">
             <LandingPage />

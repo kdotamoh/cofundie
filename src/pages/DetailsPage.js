@@ -1,7 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
 import { space } from "styled-system";
-import { useParams } from "react-router-dom";
+import { isEmpty } from "lodash";
 
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
@@ -14,8 +15,6 @@ import {
 import DealBreakdown from "components/Listings/DealBreakdown";
 import { Button } from "components/styled";
 import { COLORS } from "app-constants";
-
-import house from "assets/images/house.png";
 
 const DetailsPageStyle = styled(PageStyle)`
   background-color: rgba(20, 55, 155, 0.02);
@@ -100,107 +99,115 @@ const DetailsSection = styled(Section)`
   }
 `;
 
-const DetailsPage = () => {
-  // let match = useRouteMatch();
-  let { id } = useParams;
+const DetailsPage = ({ listings, match }) => {
+  const [data, setData] = React.useState("loading");
+  const [status, setStatus] = React.useState("loading");
+  const [selectedImage, setSelectedImage] = React.useState("");
+
+  let { id } = match.params;
+
+  React.useEffect(() => {
+    let listing = listings.find(el => el.id === Number(id));
+    console.log(listing);
+    setData(listing);
+    !isEmpty(listing) ? setStatus("loaded") : setStatus("loading");
+    !isEmpty(listing)
+      ? setSelectedImage(listing.images[0])
+      : setSelectedImage("");
+  }, [id, listings]);
 
   return (
     <DetailsPageStyle>
       <Navbar />
       <main>
-        <Section mt="4rem">
-          <p>{id}</p>
-          <ListingTitle>
-            The Place:{" "}
-            <span style={{ color: "black" }}>Single Family Unit</span>
-          </ListingTitle>
-          <small>Cantonment, Accra - Ghana</small>
+        {status === "loading" && "Loading..."}
+        {status === "loaded" && (
+          <>
+            <Section mt="4rem">
+              <ListingTitle>
+                The Place:{" "}
+                <span style={{ color: "black" }}>Single Family Unit</span>
+              </ListingTitle>
+              <small>Cantonment, Accra - Ghana</small>
 
-          <Button
-            my="5rem"
-            bg={COLORS.LIME}
-            color={COLORS.BLUE}
-            borderColor={COLORS.BLUE}
-            boxShadow="true"
-          >
-            Join the Waitlist
-          </Button>
-        </Section>
+              <Button
+                my="5rem"
+                bg={COLORS.LIME}
+                color={COLORS.BLUE}
+                borderColor={COLORS.BLUE}
+                boxShadow="true"
+              >
+                Join the Waitlist
+              </Button>
+            </Section>
 
-        <SelectedImage src={house} />
+            <SelectedImage src={selectedImage} />
 
-        <ImageGallery mt="5rem">
-          <Image src={house} />
-          <Image src={house} />
-          <Image src={house} />
-        </ImageGallery>
-        <DetailsContainer width="60vw">
-          <DetailsSection my="5rem" textAlign="left">
-            <h3 style={{ marginBottom: "2rem" }}>What We Do</h3>
-            <p>
-              In 3-clicks you can become a landlord and enjoy returns from sale
-              or rent. Co-invest in real estate developments that use
-              alternative building materials that have faster build time and are
-              eco-friendly. Its never been this easy to invest in real estate
-            </p>
-          </DetailsSection>
-        </DetailsContainer>
-        <DetailsContainer width="60vw">
-          <DetailsSection my="5rem" textAlign="left">
-            <h3 style={{ marginBottom: "2rem" }}>What We Do</h3>
-            <p>
-              In 3-clicks you can become a landlord and enjoy returns from sale
-              or rent. Co-invest in real estate developments that use
-              alternative building materials that have faster build time and are
-              eco-friendly. Its never been this easy to invest in real estate
-            </p>
-            <ul>
-              <li>sdf</li>
-              <li>csdf</li>
-              <li></li>
-            </ul>
-          </DetailsSection>
-        </DetailsContainer>
-        <DetailsContainer width={{ sm: "85vw", lg: "60vw" }}>
-          <DetailsSection my="5rem">
-            <h3 style={{ marginBottom: "2rem" }}>Deal Breakdown</h3>
-            <DealBreakdown />
-          </DetailsSection>
-        </DetailsContainer>
-        <Section>
-          <Button
-            bg={COLORS.LIME}
-            color={COLORS.BLUE}
-            borderColor={COLORS.BLUE}
-            boxShadow="true"
-          >
-            Join the Waitlist
-          </Button>
-        </Section>
-        <Section bg={COLORS.BLUE} mt="15rem" py="5rem" color="white">
-          <Container width="90%">
-            <h3 style={{ color: "white" }}>
-              Join thousands of Property Owners, Agents and Individuals that
-              love using Cofundie.
-            </h3>
-            <p style={{ paddingTop: "3rem" }}>
-              Signing up is easy, and our team will get you started in no time.
-            </p>
-            <Button
-              mt="5rem"
-              bg={COLORS.LIME}
-              color={COLORS.BLUE}
-              borderColor={COLORS.BLUE}
-              boxShadow="true"
-            >
-              Get Started
-            </Button>
-          </Container>
-        </Section>
+            <ImageGallery mt="5rem">
+              {data.images.map(image => (
+                <Image src={image} />
+              ))}
+              {/* <Image src={house} />
+              <Image src={house} />
+              <Image src={house} /> */}
+            </ImageGallery>
+            <DetailsContainer width="60vw">
+              <DetailsSection my="5rem" textAlign="left">
+                <h3 style={{ marginBottom: "2rem" }}>Summary</h3>
+                <p dangerouslySetInnerHTML={{ __html: data.summary }}></p>
+              </DetailsSection>
+            </DetailsContainer>
+            <DetailsContainer width="60vw">
+              <DetailsSection my="5rem" textAlign="left">
+                <h3 style={{ marginBottom: "2rem" }}>Location Analysis</h3>
+                <p dangerouslySetInnerHTML={{ __html: data.location }}></p>
+              </DetailsSection>
+            </DetailsContainer>
+            <DetailsContainer width={{ sm: "85vw", lg: "60vw" }}>
+              <DetailsSection my="5rem">
+                <h3 style={{ marginBottom: "2rem" }}>Deal Breakdown</h3>
+                <DealBreakdown />
+              </DetailsSection>
+            </DetailsContainer>
+            <Section>
+              <Button
+                bg={COLORS.LIME}
+                color={COLORS.BLUE}
+                borderColor={COLORS.BLUE}
+                boxShadow="true"
+              >
+                Join the Waitlist
+              </Button>
+            </Section>
+            <Section bg={COLORS.BLUE} mt="15rem" py="5rem" color="white">
+              <Container width="90%">
+                <h3 style={{ color: "white" }}>
+                  Join thousands of Property Owners, Agents and Individuals that
+                  love using Cofundie.
+                </h3>
+                <p style={{ paddingTop: "3rem" }}>
+                  Signing up is easy, and our team will get you started in no
+                  time.
+                </p>
+                <Button
+                  mt="5rem"
+                  bg={COLORS.LIME}
+                  color={COLORS.BLUE}
+                  borderColor={COLORS.BLUE}
+                  boxShadow="true"
+                >
+                  Get Started
+                </Button>
+              </Container>
+            </Section>
+          </>
+        )}
       </main>
       <Footer />
     </DetailsPageStyle>
   );
 };
 
-export default DetailsPage;
+export default connect(state => ({
+  listings: state.listings.data
+}))(DetailsPage);
