@@ -1,5 +1,6 @@
 import React from "react";
 // import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "components/styled";
 
@@ -81,7 +82,9 @@ const Navbar = props => {
     <NavbarStyle>
       {width > 900 ? (
         <>
-          <img src={logo} alt="" />
+          <Link to="/">
+            <img src={logo} alt="" />
+          </Link>
           <ul>
             <li>
               <a href="#/">About</a>
