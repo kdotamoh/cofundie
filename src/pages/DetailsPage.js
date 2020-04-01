@@ -72,8 +72,10 @@ const SelectedImage = styled.img`
 `;
 
 const DetailsContainer = styled(Container)`
-  width: 60vw;
   margin: 0 auto;
+
+  @media (max-width) {
+  }
 `;
 
 const DetailsSection = styled(Section)`
@@ -90,6 +92,11 @@ const DetailsSection = styled(Section)`
         content: ;
       }
     } */
+  }
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
   }
 `;
 
@@ -127,7 +134,7 @@ const DetailsPage = () => {
           <Image src={house} />
           <Image src={house} />
         </ImageGallery>
-        <DetailsContainer>
+        <DetailsContainer width="60vw">
           <DetailsSection my="5rem" textAlign="left">
             <h3 style={{ marginBottom: "2rem" }}>What We Do</h3>
             <p>
@@ -138,7 +145,7 @@ const DetailsPage = () => {
             </p>
           </DetailsSection>
         </DetailsContainer>
-        <DetailsContainer>
+        <DetailsContainer width="60vw">
           <DetailsSection my="5rem" textAlign="left">
             <h3 style={{ marginBottom: "2rem" }}>What We Do</h3>
             <p>
@@ -154,7 +161,7 @@ const DetailsPage = () => {
             </ul>
           </DetailsSection>
         </DetailsContainer>
-        <DetailsContainer>
+        <DetailsContainer width={{ sm: "85vw", lg: "60vw" }}>
           <DetailsSection my="5rem">
             <h3 style={{ marginBottom: "2rem" }}>Deal Breakdown</h3>
             <DealBreakdown />
