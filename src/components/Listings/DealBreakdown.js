@@ -38,6 +38,13 @@ const ListingLabel = styled.span`
   padding: 2rem 2rem;
   color: ${props => props.color};
   background-color: ${props => props.bg};
+
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
+    padding: 0.5rem 2rem;
+    font-size: 1.2rem;
+    width: fit-content;
+  }
 `;
 
 const Divider = styled.div`
@@ -55,8 +62,10 @@ const ListingFigure = styled.div`
   padding: 2rem 2rem;
 
   @media (max-width: 768px) {
-    font-size: 1.6rem;
     padding: 0.5rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    font-size: 1.2rem;
   }
 `;
 
