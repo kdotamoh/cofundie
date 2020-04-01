@@ -30,30 +30,31 @@ const listingsData = [
     id: 1,
     name: "Appolonia Mews-Phase I",
     summary: `<p>Appolonia Mews consists of 2 x 2 bedroom semi-detached houses and 2 x 2 bedroom apartment 
-      houses within Appolonia City. <br/> The homes are targeted at middle-income earners within Accra looking to 
+      houses within Appolonia City. The homes are targeted at middle-income earners within Accra looking to 
       purchase their first homes. Interested buyers will be offered competitive payment schedules and access 
-      to mortgages. <br/> Upon completion, Appolonia Mews will be the most affordable homes in Appolonia City. <br/>
-      The first phase is the pilot and it consists of 20 units. <br/> Meqasa.com, The premier property listing 
+      to mortgages. Upon completion, Appolonia Mews will be the most affordable homes in Appolonia City.<br/>
+      The first phase is the pilot and it consists of 20 units. <br/><br/> Meqasa.com, The premier property listing 
       platform in Ghana will provide sales support for each unit and receive a commission based on units sold.
       </p>`,
     location: `<p>Appolonia City is a 2,325-acre (941-hectare) mixed-use and mixed-income urban development 
       just 20km from the centre of Accra. The project includes a variety of social infrastructure underpinned 
       by world-class construction and estate management services. Residential sales with a range of financing 
       options are available by purchasing a plot to build your own house in Nova Ridge or an existing home at 
-      the Oxford development. <br/>
+      the Oxford development. <br/><br/>
       Appolonia Business Park offers 70 acres (30 hectares) of modern commercial areas. The park is designed 
-      to accommodate a range of uses including manufacturing, processing, storage, logistics and service companies.<br/>
+      to accommodate a range of uses including manufacturing, processing, storage, logistics and service companies.
       Appolonia city aspires to be a multi-functional, fully integrated & self-sustaining city in Accra, to 
       that end, the strategy is to make it possible for people in different economic demographics to afford 
-      housing within the city. <br/>
-      Upon completion, Appolonia City will feature the following amenities
+      housing within the city. <br/><br/>
+      Upon completion, Appolonia City will feature the following amenities:
       <ul>
         <li>25,000 housing units (100,000 residents)</li>
         <li>A 200-acre modern business and industrial park</li>
         <li>A 100-acre central business district</li>
         <li>Over 300-acres of public parks and gardens</li>
       </ul>
-      Appolonia City is 30 minutes from Tetteh Quarshie and Accra Mall and 5 minutes from Valley View University Oyibi.<br/>
+      <br/>
+      Appolonia City is 30 minutes from Tetteh Quarshie and Accra Mall and 5 minutes from Valley View University Oyibi.
       It’s also 15 minutes from Adenta and 40 minutes from Tema.<br/>
       Eastern Ridge International School, an international boarding school which will offer British and 
       Ghanaian curriculum which will host 2,000 students upon completion is also going to be located at Appolonia City.
@@ -74,32 +75,31 @@ const listingsData = [
     id: 2,
     name: "Appolonia Mews-Phase II",
     summary: `<p>Appolonia Mews consists of 2 x 2 bedroom semi-detached houses and 2 x 2 bedroom apartment 
-      houses within Appolonia City. 
-      The homes are targetted at middle-income earners within Accra looking to purchase their first homes. 
-      Interested buyers will be offered competitive payment schedules and access to mortgages.
-      Upon completion, Appolonia Mews will be the most affordable homes in Appolonia City.
-      This phase consists of 2 bed homes built in a new design and general structure. Meqasa.com, The premier 
-      property listing platform in Ghana will provide sales support for each unit and receive a commission based on units sold.
-      
+      houses within Appolonia City. The homes are targeted at middle-income earners within Accra looking to 
+      purchase their first homes. Interested buyers will be offered competitive payment schedules and access 
+      to mortgages. Upon completion, Appolonia Mews will be the most affordable homes in Appolonia City.<br/>
+      The first phase is the pilot and it consists of 20 units. <br/><br/> Meqasa.com, The premier property listing 
+      platform in Ghana will provide sales support for each unit and receive a commission based on units sold.
       </p>`,
     location: `<p>Appolonia City is a 2,325-acre (941-hectare) mixed-use and mixed-income urban development 
       just 20km from the centre of Accra. The project includes a variety of social infrastructure underpinned 
       by world-class construction and estate management services. Residential sales with a range of financing 
       options are available by purchasing a plot to build your own house in Nova Ridge or an existing home at 
-      the Oxford development. <br/>
+      the Oxford development. <br/><br/>
       Appolonia Business Park offers 70 acres (30 hectares) of modern commercial areas. The park is designed 
-      to accommodate a range of uses including manufacturing, processing, storage, logistics and service companies.<br/>
+      to accommodate a range of uses including manufacturing, processing, storage, logistics and service companies.
       Appolonia city aspires to be a multi-functional, fully integrated & self-sustaining city in Accra, to 
       that end, the strategy is to make it possible for people in different economic demographics to afford 
-      housing within the city. <br/>
-      Upon completion, Appolonia City will feature the following amenities
+      housing within the city. <br/><br/>
+      Upon completion, Appolonia City will feature the following amenities:
       <ul>
         <li>25,000 housing units (100,000 residents)</li>
         <li>A 200-acre modern business and industrial park</li>
         <li>A 100-acre central business district</li>
         <li>Over 300-acres of public parks and gardens</li>
       </ul>
-      Appolonia City is 30 minutes from Tetteh Quarshie and Accra Mall and 5 minutes from Valley View University Oyibi.<br/>
+      <br/>
+      Appolonia City is 30 minutes from Tetteh Quarshie and Accra Mall and 5 minutes from Valley View University Oyibi.
       It’s also 15 minutes from Adenta and 40 minutes from Tema.<br/>
       Eastern Ridge International School, an international boarding school which will offer British and 
       Ghanaian curriculum which will host 2,000 students upon completion is also going to be located at Appolonia City.

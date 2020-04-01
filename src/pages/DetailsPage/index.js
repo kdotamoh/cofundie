@@ -18,6 +18,8 @@ import DealBreakdown from "components/Listings/DealBreakdown";
 import { Button } from "components/styled";
 import { COLORS } from "app-constants";
 
+import cancel from "assets/images/cancel.svg";
+
 const DetailsPageStyle = styled(PageStyle)`
   background-color: rgba(20, 55, 155, 0.02);
 `;
@@ -31,7 +33,7 @@ const ListingTitle = styled.h3`
 export const Image = styled.img`
   ${space}
   border-radius: 4px;
-  width: 33.3%;
+  width: 33%;
   height: 18rem;
   object-fit: cover;
 
@@ -99,6 +101,14 @@ const DetailsSection = styled(Section)`
     align-items: center;
     text-align: center;
   }
+`;
+
+const CloseModal = styled.img`
+  cursor: pointer;
+  position: absolute;
+  /* left: 95%; */
+  right: 5rem;
+  height: 3rem;
 `;
 
 const DetailsPage = ({ listings, match }) => {
@@ -176,10 +186,12 @@ const DetailsPage = ({ listings, match }) => {
             </DetailsContainer>
             <Section>
               <Button
+                my="5rem"
                 bg={COLORS.LIME}
                 color={COLORS.BLUE}
                 borderColor={COLORS.BLUE}
                 boxShadow="true"
+                onClick={() => setFormVisible(true)}
               >
                 Join the Waitlist
               </Button>
@@ -208,10 +220,35 @@ const DetailsPage = ({ listings, match }) => {
           </>
         )}
       </main>
-      {/* about 70vw wide */}
-      <Modal isOpen={formVisible}>
-        <p>":)"</p>
-        <button onClick={() => setFormVisible(false)}>Close</button>
+      <Modal
+        isOpen={formVisible}
+        style={{
+          overlay: {
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.5)"
+          },
+          content: {
+            position: "absolute",
+            top: "10rem",
+            left: "15vw",
+            right: "15vw",
+            bottom: "4rem",
+            // height: "content-fit",
+            border: "none",
+            background: "#fff",
+            overflow: "auto",
+            WebkitOverflowScrolling: "touch",
+            borderRadius: "8px",
+            outline: "none",
+            padding: "20px"
+          }
+        }}
+      >
+        <CloseModal src={cancel} alt="" onClick={() => setFormVisible(false)} />
         <WaitListForm />
       </Modal>
 

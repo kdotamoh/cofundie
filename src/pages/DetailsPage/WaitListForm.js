@@ -2,6 +2,7 @@ import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import styled from "styled-components";
+import { space } from "styled-system";
 
 import { COLORS } from "app-constants";
 import { Button } from "components/styled";
@@ -52,6 +53,7 @@ const Input = styled.input`
 `;
 
 const H3 = styled.h3`
+  ${space}
   text-align: center;
 `;
 
@@ -70,7 +72,7 @@ const WaitListForm = () => {
     >
       {({ values, handleChange }) => (
         <>
-          <H3>Join the Waitlist</H3>
+          <H3 mt="4rem">Join the Waitlist</H3>
           <Form>
             <Label>Full name</Label>
             <Input
@@ -97,7 +99,7 @@ const WaitListForm = () => {
             />
 
             <Button
-              mt="5rem"
+              my="5rem"
               bg={COLORS.LIME}
               color={COLORS.BLUE}
               borderColor={COLORS.BLUE}
