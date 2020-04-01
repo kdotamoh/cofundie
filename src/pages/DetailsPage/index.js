@@ -22,6 +22,11 @@ import cancel from "assets/images/cancel.svg";
 
 const DetailsPageStyle = styled(PageStyle)`
   background-color: rgba(20, 55, 155, 0.02);
+  background-image: linear-gradient(
+    to right,
+    ${COLORS.BACKGROUND_LIGHT_BLUE} 50%,
+    ${COLORS.LIGHT_LIME}
+  );
 `;
 
 const ListingTitle = styled.h3`
@@ -36,6 +41,7 @@ export const Image = styled.img`
   width: 33%;
   height: 18rem;
   object-fit: cover;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     width: 80vw;
@@ -53,6 +59,7 @@ const ImageGallery = styled.div`
   flex-direction: row;
   flex-wrap: nowrap;
   overflow-x: auto;
+  box-shadow: 0 23px 52px rgba(0, 0, 0, 0.2);
 
   * {
     flex: 0 0 auto;
@@ -78,6 +85,7 @@ const SelectedImage = styled.img`
   height: 100vh;
   margin: 0 auto;
   object-fit: cover;
+  box-shadow: 0 23px 52px rgba(0, 0, 0, 0.1.5);
 
   @media (max-width: 768px) {
     display: none;
@@ -174,7 +182,11 @@ const DetailsPage = ({ listings, match }) => {
 
             <ImageGallery mt="5rem">
               {data.images.map((image, id) => (
-                <Image key={id} src={image} />
+                <Image
+                  key={id}
+                  src={image}
+                  onClick={() => setSelectedImage(image)}
+                />
               ))}
             </ImageGallery>
             <DetailsContainer width="60vw">
