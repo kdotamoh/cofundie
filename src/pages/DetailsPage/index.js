@@ -165,10 +165,9 @@ const DetailsPage = ({ listings, match }) => {
           <>
             <Section mt="4rem">
               <ListingTitle>
-                The Place:{" "}
-                <span style={{ color: "black" }}>Single Family Unit</span>
+                The Place: <span style={{ color: "black" }}>{data.name}</span>
               </ListingTitle>
-              <small>Cantonment, Accra - Ghana</small>
+              <small>Accra - Ghana</small>
 
               <Button
                 my="5rem"
