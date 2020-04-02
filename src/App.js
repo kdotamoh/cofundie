@@ -29,7 +29,8 @@ import DetailsPage from "pages/DetailsPage";
 const listingsData = [
   {
     id: 1,
-    name: "Appolonia Mews-Phase I",
+    name: "Appolonia Mews",
+    phase: "Phase 1",
     summary: `<p>Appolonia Mews consists of 2 x 2 bedroom semi-detached houses and 2 x 2 bedroom apartment 
       houses within Appolonia City. The homes are targeted at middle-income earners within Accra looking to 
       purchase their first homes. Interested buyers will be offered competitive payment schedules and access 
@@ -75,7 +76,8 @@ const listingsData = [
   },
   {
     id: 2,
-    name: "Appolonia Mews-Phase II",
+    name: "Appolonia Mews",
+    phase: "Phase 2",
     summary: `<p>Appolonia Mews consists of 2 x 2 bedroom semi-detached houses and 2 x 2 bedroom apartment 
       houses within Appolonia City. The homes are targeted at middle-income earners within Accra looking to 
       purchase their first homes. Interested buyers will be offered competitive payment schedules and access 
@@ -121,7 +123,8 @@ const listingsData = [
   },
   {
     id: 3,
-    name: "Gemini Housing Project (Phase-1)",
+    name: "Gemini Housing Project",
+    phase: "Phase 1",
     summary: `<p>The Gemini housing project (GHP) is a housing development planned for the suburbs of Accra, Ghana. 
       It consists of 3-4 units of 3 bed bungalows made with a mixture of earth bricks and concrete. 
       Targetted homebuyers are middle income earners and 4 person families who want to buy their first or second homes, with their own yards or compounds.

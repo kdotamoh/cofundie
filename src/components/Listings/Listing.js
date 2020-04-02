@@ -111,7 +111,8 @@ const Listing = ({ listing: data }) => {
       // ratio={entry.intersectionRatio}
     >
       <ListingName>
-        <span style={{ color: `${COLORS.BLUE}` }}>The Place:</span> {data.name}
+        <span style={{ color: `${COLORS.BLUE}` }}>{data.name}:</span>{" "}
+        {data.phase}
       </ListingName>
       <ListingLocation style={{ marginBottom: "2rem" }}>
         Accra-Ghana

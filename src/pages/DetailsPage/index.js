@@ -165,7 +165,8 @@ const DetailsPage = ({ listings, match }) => {
           <>
             <Section mt="4rem">
               <ListingTitle>
-                The Place: <span style={{ color: "black" }}>{data.name}</span>
+                {data.name}:{" "}
+                <span style={{ color: "black" }}>{data.phase}</span>
               </ListingTitle>
               <small>Accra - Ghana</small>
 
@@ -211,6 +212,15 @@ const DetailsPage = ({ listings, match }) => {
               </DetailsSection>
             </DetailsContainer>
             <Section>
+              <DetailsContainer width={{ sm: "70vw", lg: "50vw" }}>
+                <p>
+                  <strong style={{ color: COLORS.BLUE }}>NB:</strong> The house
+                  models are just estimations of what the homes will look like
+                  after they are built. The final product might look different
+                  and Cofundie will keep updating the images with recent and up
+                  to date models which are closer to the final results
+                </p>
+              </DetailsContainer>
               <Button
                 my="5rem"
                 bg={COLORS.LIME}
