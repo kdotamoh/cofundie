@@ -35,6 +35,8 @@ import placeholder from "assets/images/placeholder.png";
 
 const NewsLogos = styled.img`
   width: 70%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 
   @media (max-width: 768px) {
     width: 95%;
