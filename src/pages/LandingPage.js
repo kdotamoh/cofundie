@@ -73,7 +73,11 @@ const Feature = styled.div`
   }
 
   @media (max-width: 768px) {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+
+    p {
+      margin-right: 2rem;
+    }
   }
 `;
 
@@ -298,7 +302,7 @@ const LandingPage = props => {
           />
         </Section>
         <Section bg={COLORS.BACKGROUND_LIME} py="10rem">
-          <h3 style={{ paddingBottom: "10rem" }}>How It Works</h3>
+          <h3 style={{ paddingBottom: "8rem" }}>How It Works</h3>
           <FeatureGrid>
             <Feature>
               <img data-src={create} className="lazyload" alt="" />

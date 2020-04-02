@@ -105,7 +105,9 @@ const Navbar = props => {
         </>
       ) : (
         <>
-          <img style={{ width: "8rem", height: "auto" }} src={logo} alt="" />
+          <Link to="/">
+            <img style={{ width: "8rem", height: "auto" }} src={logo} alt="" />
+          </Link>
           <NavButton bg="white" borderColor={COLORS.BLUE} color={COLORS.BLUE}>
             <a href="#/">Get Started</a>
           </NavButton>
