@@ -132,7 +132,7 @@ const listingsData = [
     details: {
       sharePrice: "$200",
       structure: "Debt",
-      projectedReturn: "15%",
+      projectedReturn: "20%",
       holdPeriod: "12 months",
       primaryMaterial: "Earth bricks"
     },
