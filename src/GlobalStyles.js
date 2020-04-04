@@ -15,7 +15,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Museo";
+    font-family: MuseoSans300;
   }
 
   html {
@@ -33,15 +33,18 @@ export default createGlobalStyle`
     color: ${COLORS.BLUE}
   }
 
-  /* @media (max-width: 768px) {
-    h2 {
-      font-size: ${H2_SIZE_SM}rem;
-    }
-  } */
   
   h3 {
     font-size: ${H3_SIZE}rem;
     color: ${COLORS.BLUE}
+  }
+
+  h1, h2, h3 {
+    font-family: MuseoSans700;
+  }
+
+  h4, h5 {
+    font-family: MuseoSans500;
   }
 
   @media (max-width: 768px) {
@@ -57,12 +60,10 @@ export default createGlobalStyle`
   ${fonts}
 
   body {
-     /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-       sans-serif; */
-    font-family: "Museo";
+    font-family: MuseoSans300;
     color: #3d3d3d;
-    font-weight: 300;
+    /* font-weight: 300; */
+    font-weight: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 18px;
@@ -71,41 +72,7 @@ export default createGlobalStyle`
     min-height: 100vh;
 
     @media (max-width: 768px) {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
-
-/* 
-  a {
-    color:;
-    text-decoration: underline;
-  }
-
-  import fonts */
-
-  .row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-
-  .column {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    flex: 1;
-    text-align: center;
-  }
-
-
-
-
-  // #root {
-    //   height: 100vh;
-    // }
-
-    // .App {
-    //   min-height: 100vh;
-    // }
 `;

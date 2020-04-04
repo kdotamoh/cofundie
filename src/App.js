@@ -67,12 +67,12 @@ const listingsData = [
       structure: "Debt",
       projectedReturn: "15%",
       holdPeriod: "12 months",
-      primaryMaterial: "Concrete mix"
+      primaryMaterial: "Concrete mix",
     },
     images: [mewsOne1, mewsOne2, mewsOne3, mewsOne4],
     disclaimer: `<p>*The house models are just estimations of what the homes will look like after they 
       are built. The final product might look different and Cofundie will keep updating the images with 
-      recent and up to date models which are closer to the final results</p>`
+      recent and up to date models which are closer to the final results</p>`,
   },
   {
     id: 2,
@@ -114,12 +114,12 @@ const listingsData = [
       structure: "Debt",
       projectedReturn: "15%",
       holdPeriod: "12 months",
-      primaryMaterial: "Concrete mix"
+      primaryMaterial: "Concrete mix",
     },
     images: [mewsTwo1, mewsTwo2, mewsTwo3, mewsTwo4],
     disclaimer: `<p>*The house models are just estimations of what the homes will look like after they 
       are built. The final product might look different and Cofundie will keep updating the images with 
-      recent and up to date models which are closer to the final results</p>`
+      recent and up to date models which are closer to the final results</p>`,
   },
   {
     id: 3,
@@ -137,13 +137,13 @@ const listingsData = [
       structure: "Debt",
       projectedReturn: "20%",
       holdPeriod: "12 months",
-      primaryMaterial: "Earth bricks"
+      primaryMaterial: "Earth bricks",
     },
     images: [gemini1, gemini2, gemini3],
     disclaimer: `<p>*The house models are just estimations of what the homes will look like after they 
       are built. The final product might look different and Cofundie will keep updating the images with 
-      recent and up to date models which are closer to the final results</p>`
-  }
+      recent and up to date models which are closer to the final results</p>`,
+  },
 ];
 
 function App() {
@@ -160,9 +160,7 @@ function App() {
       <Router>
         <ScrollToTop />
         <Switch>
-          <Route path="/details/:id" component={DetailsPage}>
-            {/* <DetailsPage /> */}
-          </Route>
+          <Route path="/details/:id" component={DetailsPage}></Route>
           <Route path="/">
             <LandingPage />
           </Route>
