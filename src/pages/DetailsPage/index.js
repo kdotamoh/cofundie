@@ -10,7 +10,7 @@ import Footer from "components/Footer";
 import {
   PageStyle,
   Section,
-  Container
+  Container,
   // HorizontalScroll
 } from "components/layout";
 import WaitListForm from "./WaitListForm";
@@ -147,7 +147,7 @@ const DetailsPage = ({ listings, match }) => {
   let { id } = match.params;
 
   React.useEffect(() => {
-    let listing = listings.find(el => el.id === Number(id));
+    let listing = listings.find((el) => el.id === Number(id));
     console.log(listing);
     setData(listing);
     !isEmpty(listing) ? setStatus("loaded") : setStatus("loading");
@@ -193,13 +193,13 @@ const DetailsPage = ({ listings, match }) => {
                 />
               ))}
             </ImageGallery>
-            <DetailsContainer width="60vw">
+            <DetailsContainer width={{ sm: "75vw", lg: "60vw" }}>
               <DetailsSection my="5rem" textAlign="left">
                 <h3 style={{ marginBottom: "2rem" }}>Summary</h3>
                 <p dangerouslySetInnerHTML={{ __html: data.summary }}></p>
               </DetailsSection>
             </DetailsContainer>
-            <DetailsContainer width="60vw">
+            <DetailsContainer width={{ sm: "75vw", lg: "60vw" }}>
               <DetailsSection my="5rem" textAlign="left">
                 <h3 style={{ marginBottom: "2rem" }}>Location Analysis</h3>
                 <p dangerouslySetInnerHTML={{ __html: data.location }}></p>
@@ -265,7 +265,7 @@ const DetailsPage = ({ listings, match }) => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: "rgba(0, 0, 0, 0.5)"
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
           },
           content: {
             position: "absolute",
@@ -279,8 +279,8 @@ const DetailsPage = ({ listings, match }) => {
             WebkitOverflowScrolling: "touch",
             borderRadius: "8px",
             outline: "none",
-            padding: "20px"
-          }
+            padding: "20px",
+          },
         }}
       >
         <CloseModal src={cancel} alt="" onClick={() => setVisible(false)} />
@@ -291,6 +291,6 @@ const DetailsPage = ({ listings, match }) => {
   );
 };
 
-export default connect(state => ({
-  listings: state.listings.data
+export default connect((state) => ({
+  listings: state.listings.data,
 }))(DetailsPage);

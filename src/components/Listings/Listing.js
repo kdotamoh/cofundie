@@ -14,6 +14,10 @@ import { COLORS } from "app-constants";
 // }))``;
 const ListingStyle = styled.div`
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const Card = styled.div`
@@ -37,10 +41,16 @@ const ListingImage = styled.img`
   }
 `;
 
+const Divider = styled.div`
+  grid-area: divider;
+  border-left: 2px solid ${COLORS.BLUE};
+  height: 100%;
+`;
+
 const ListingInfo = styled.div`
   text-align: left;
   font-weight: 700;
-  padding: 2rem 4rem;
+  padding: 2rem 2rem;
 
   display: grid;
   align-items: space-between;
@@ -50,6 +60,7 @@ const ListingInfo = styled.div`
   align-items: center;
 
   @media (max-width: 768px) {
+    grid-template-columns: 64% 2% 34%;
     padding: 2rem 1.5rem;
   }
 `;
@@ -58,8 +69,8 @@ const ListingFigure = styled.div`
   ${color}
 
   margin-bottom: 1rem;
-  margin-left: 2rem;
   font-size: 2rem;
+  padding: 0.5rem 2rem;
 
   @media (max-width: 768px) {
     font-size: 1.6rem;
@@ -75,8 +86,8 @@ const ListingLabel = styled.span`
   border-radius: 4px;
   display: block;
   padding: 0.5rem 2rem;
-  color: ${props => props.color};
-  background-color: ${props => props.bg};
+  color: ${(props) => props.color};
+  background-color: ${(props) => props.bg};
 `;
 
 const ListingLocation = styled.p`
@@ -133,6 +144,7 @@ const Listing = ({ listing: data }) => {
               Structure
             </ListingLabel>
           </div>
+          <Divider />
           <div>
             <ListingFigure>
               {data.details ? data.details.holdPeriod : null}

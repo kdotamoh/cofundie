@@ -75,7 +75,7 @@ const Feature = styled.div`
   }
 
   @media (max-width: 768px) {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 
     p {
       margin-right: 2rem;
@@ -247,7 +247,7 @@ const TestimonialQuote = styled.p`
 
 const LandingPageStyle = styled(PageStyle)``;
 
-const LandingPage = props => {
+const LandingPage = (props) => {
   const [previousTab, setPreviousTab] = React.useState(0);
 
   return (
@@ -283,23 +283,23 @@ const LandingPage = props => {
               {
                 label: "Coming Soon",
                 key: 1,
-                component: <ComingSoon />
+                component: <ComingSoon />,
               },
               {
                 label: "Available",
                 key: 2,
-                component: <Available />
+                component: <Available />,
               },
               {
                 label: "Closed",
                 key: 3,
-                component: <Closed />
+                component: <Closed />,
               },
               {
                 label: "Sold Out",
                 key: 4,
-                component: <SoldOut />
-              }
+                component: <SoldOut />,
+              },
             ]}
           />
         </Section>

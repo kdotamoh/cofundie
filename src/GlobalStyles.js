@@ -68,11 +68,12 @@ export default createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     font-size: 18px;
     font-size: 1.8rem;
-    line-height: 1.3;;
+    line-height: 1.4;;
     min-height: 100vh;
 
     @media (max-width: 768px) {
-      font-size: 14px;
+      font-size: 1.6rem;
+      font-size: 16px;
     }
   }
 `;
