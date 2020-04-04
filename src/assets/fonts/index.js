@@ -1,6 +1,6 @@
-import Museo700 from "./Museo 700.otf";
-import Museo500 from "./Museo 500.otf";
-import Museo300 from "./Museo 300.otf";
+import Museo700 from "./Museo 700.woff2";
+import Museo500 from "./Museo 500.woff2";
+import Museo300 from "./Museo 300.woff2";
 
 export default `
   @font-face {

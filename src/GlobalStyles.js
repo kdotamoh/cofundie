@@ -7,7 +7,7 @@ import {
   H2_SIZE_SM,
   H3_SIZE,
   H3_SIZE_SM,
-  COLORS
+  COLORS,
 } from "app-constants";
 
 export default createGlobalStyle`
@@ -71,7 +71,7 @@ export default createGlobalStyle`
     min-height: 100vh;
 
     @media (max-width: 768px) {
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 
