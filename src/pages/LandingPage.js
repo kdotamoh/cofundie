@@ -20,6 +20,7 @@ import Tabs from "components/Tabs";
 import Footer from "components/Footer";
 
 import newsLogos from "assets/images/news-logos.png";
+import partners from "assets/images/partners.png";
 import laptop from "assets/images/macbook.png";
 import laptopM from "assets/images/macbook-mobile.png";
 import laptopT from "assets/images/macbook-tablet.png";
@@ -31,7 +32,9 @@ import earn from "assets/images/earn.png";
 import choose from "assets/images/choose.png";
 import pay from "assets/images/pay.png";
 import tick from "assets/images/tick.png";
-import placeholder from "assets/images/placeholder.png";
+import kelvin from "assets/images/testimonials/kelvin.png";
+import jide from "assets/images/testimonials/jide.png";
+import amara from "assets/images/testimonials/amara.png";
 
 const NewsLogos = styled.img`
   width: 70%;
@@ -195,19 +198,44 @@ const Testimonials = styled.div`
     flex-direction: column;
   }
 `;
-
+const testimonialData = [
+  {
+    id: 1,
+    image: kelvin,
+    name: " Kelvin Nyame",
+    title: "CEO- Meqasa",
+    quote: `"This company is going to change the way the real estate industry operates"`,
+  },
+  {
+    id: 2,
+    image: amara,
+    name: "Amarachi Nzenwa",
+    title: "  Team lead Danish Refugee council",
+    quote: `  "I am so happy to finally be able to invest in real estate and I love watching my money grow"`,
+  },
+  {
+    id: 3,
+    image: jide,
+    name: " Babajide Aloba",
+    title: "Real Estate Professional",
+    quote: `“Investing in Real Estate, though desirable to many, has remained elusive mainly due to the high 
+    cost of investment. However, with “Cofundie” more people can afford to participate in Real Estate investment 
+    at different levels of financial capacity. It is really a welcome development”.`,
+  },
+];
 const Testimonial = styled.div`
   display: flex;
   color: ${COLORS.BLUE};
   flex-direction: row;
   border-radius: 6px;
-  align-items: flex-start;
-  padding: 2rem 4rem;
+  font-size: 1.4rem;
+  align-items: center;
+  padding: 4rem 4rem;
   box-shadow: 0 0.6px 2.1px rgba(0, 0, 0, 0.017),
     0 1.4px 5px rgba(0, 0, 0, 0.024), 0 2.6px 9.4px rgba(0, 0, 0, 0.03),
     0 4.7px 16.8px rgba(0, 0, 0, 0.036), 0 8.8px 31.3px rgba(0, 0, 0, 0.043),
     0 21px 75px rgba(0, 0, 0, 0.06);
-  width: 35vw;
+  width: 40vw;
   margin: 1.5rem;
 
   img {
@@ -227,18 +255,22 @@ const Testimonial = styled.div`
       width: 7.5rem;
     }
     width: 85vw;
+    align-items: flex-start;
+    font-size: 1.2rem;
   }
 `;
 
 const TestimonialName = styled.span`
   font-weight: 700;
   display: block;
+  font-size: 110%;
 `;
 
-const TestimonialPosition = styled.span`
+const TestimonialTitle = styled.span`
   display: block;
   text-align: left;
   margin-bottom: 1.5rem;
+  font-size: 110%;
 `;
 
 const TestimonialQuote = styled.p`
@@ -397,40 +429,24 @@ const LandingPage = (props) => {
           <h2 style={{ marginBottom: "3rem" }}>Testimonials</h2>
 
           <Testimonials>
-            <Testimonial>
-              <img data-src={placeholder} className="lazyload" alt="" />
-              <div>
-                <TestimonialName>Kelvin Nyame</TestimonialName>
-                <TestimonialPosition>CEO - MeQasa</TestimonialPosition>
-                <TestimonialQuote>
-                  "This company is going to change the way the real estate
-                  industry operates."
-                </TestimonialQuote>
-              </div>
-            </Testimonial>
-            <Testimonial>
-              <img data-src={placeholder} className="lazyload" alt="" />
-              <div>
-                <TestimonialName>Kelvin Nyame</TestimonialName>
-                <TestimonialPosition>CEO - MeQasa</TestimonialPosition>
-                <TestimonialQuote>
-                  "This company is going to change the way the real estate
-                  industry operates."
-                </TestimonialQuote>
-              </div>
-            </Testimonial>
-            <Testimonial>
-              <img data-src={placeholder} className="lazyload" alt="" />
-              <div>
-                <TestimonialName>Kelvin Nyame</TestimonialName>
-                <TestimonialPosition>CEO - MeQasa</TestimonialPosition>
-                <TestimonialQuote>
-                  "This company is going to change the way the real estate
-                  industry operates."
-                </TestimonialQuote>
-              </div>
-            </Testimonial>
+            {testimonialData?.map(({ id, image, name, title, quote }) => (
+              <Testimonial key={id}>
+                <img data-src={image} className="lazyload" alt="" />
+                <div>
+                  <TestimonialName>{name}</TestimonialName>
+                  <TestimonialTitle>{title}</TestimonialTitle>
+                  <TestimonialQuote>{quote}</TestimonialQuote>
+                </div>
+              </Testimonial>
+            ))}
           </Testimonials>
+        </Section>
+
+        <Section bg={COLORS.BACKGROUND_LIME} py="6rem">
+          <Container width="90%">
+            <h3>Meet Our Partners And Service Providers</h3>
+            <NewsLogos src={partners} alt="" />
+          </Container>
         </Section>
         <Section bg={COLORS.BLUE} py="10rem" color="white">
           <Container width="70%">

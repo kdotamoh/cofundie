@@ -148,7 +148,6 @@ const DetailsPage = ({ listings, match }) => {
 
   React.useEffect(() => {
     let listing = listings.find((el) => el.id === Number(id));
-    console.log(listing);
     setData(listing);
     !isEmpty(listing) ? setStatus("loaded") : setStatus("loading");
     !isEmpty(listing)

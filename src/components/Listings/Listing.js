@@ -71,6 +71,7 @@ const ListingFigure = styled.div`
   margin-bottom: 1rem;
   font-size: 2rem;
   padding: 0.5rem 2rem;
+  font-weight: bold;
 
   @media (max-width: 768px) {
     font-size: 1.6rem;

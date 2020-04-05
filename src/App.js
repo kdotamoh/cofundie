@@ -69,13 +69,36 @@ const listingsData = [
       holdPeriod: "12 months",
       primaryMaterial: "Concrete mix",
     },
-    images: [mewsOne1, mewsOne2, mewsOne3, mewsOne4],
+    images: [mewsOne2, mewsOne1, mewsOne3, mewsOne4],
     disclaimer: `<p>*The house models are just estimations of what the homes will look like after they 
       are built. The final product might look different and Cofundie will keep updating the images with 
       recent and up to date models which are closer to the final results</p>`,
   },
   {
     id: 2,
+    name: "Gemini Housing Project",
+    phase: "Phase 1",
+    summary: `<p>The Gemini housing project (GHP) is a housing development planned for the suburbs of Accra, Ghana. 
+      It consists of 3-4 units of 3 bed bungalows made with a mixture of earth bricks and concrete. 
+      Targetted homebuyers are middle income earners and 4 person families who want to buy their first or second homes, with their own yards or compounds.
+      The project will be built with sustainable practices in mind and is designed to be cost & energy efficient. 
+      The developer is a veteran with using earth bricks to create beautiful structures and will be bringing that expertise to the GHP.    
+      </p>`,
+    location: `<p>TBD</p>`,
+    details: {
+      sharePrice: "$200",
+      structure: "Debt",
+      projectedReturn: "20%",
+      holdPeriod: "12 months",
+      primaryMaterial: "Earth bricks",
+    },
+    images: [gemini1, gemini2, gemini3],
+    disclaimer: `<p>*The house models are just estimations of what the homes will look like after they 
+      are built. The final product might look different and Cofundie will keep updating the images with 
+      recent and up to date models which are closer to the final results</p>`,
+  },
+  {
+    id: 3,
     name: "Appolonia Mews",
     phase: "Phase 2",
     summary: `<p>Appolonia Mews consists of 2 x 2 bedroom semi-detached houses and 2 x 2 bedroom apartment 
@@ -116,30 +139,7 @@ const listingsData = [
       holdPeriod: "12 months",
       primaryMaterial: "Concrete mix",
     },
-    images: [mewsTwo1, mewsTwo2, mewsTwo3, mewsTwo4],
-    disclaimer: `<p>*The house models are just estimations of what the homes will look like after they 
-      are built. The final product might look different and Cofundie will keep updating the images with 
-      recent and up to date models which are closer to the final results</p>`,
-  },
-  {
-    id: 3,
-    name: "Gemini Housing Project",
-    phase: "Phase 1",
-    summary: `<p>The Gemini housing project (GHP) is a housing development planned for the suburbs of Accra, Ghana. 
-      It consists of 3-4 units of 3 bed bungalows made with a mixture of earth bricks and concrete. 
-      Targetted homebuyers are middle income earners and 4 person families who want to buy their first or second homes, with their own yards or compounds.
-      The project will be built with sustainable practices in mind and is designed to be cost & energy efficient. 
-      The developer is a veteran with using earth bricks to create beautiful structures and will be bringing that expertise to the GHP.    
-      </p>`,
-    location: `<p>TBD</p>`,
-    details: {
-      sharePrice: "$200",
-      structure: "Debt",
-      projectedReturn: "20%",
-      holdPeriod: "12 months",
-      primaryMaterial: "Earth bricks",
-    },
-    images: [gemini1, gemini2, gemini3],
+    images: [mewsTwo3, mewsTwo1, mewsTwo2, mewsTwo4],
     disclaimer: `<p>*The house models are just estimations of what the homes will look like after they 
       are built. The final product might look different and Cofundie will keep updating the images with 
       recent and up to date models which are closer to the final results</p>`,
