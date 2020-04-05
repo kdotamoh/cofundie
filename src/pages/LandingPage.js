@@ -203,15 +203,15 @@ const testimonialData = [
     id: 1,
     image: kelvin,
     name: " Kelvin Nyame",
-    title: "CEO- Meqasa",
+    title: "CEO - Meqasa",
     quote: `"This company is going to change the way the real estate industry operates"`,
   },
   {
     id: 2,
     image: amara,
     name: "Amarachi Nzenwa",
-    title: "  Team lead Danish Refugee council",
-    quote: `  "I am so happy to finally be able to invest in real estate and I love watching my money grow"`,
+    title: "Team lead Danish Refugee council",
+    quote: `"I am so happy to finally be able to invest in real estate and I love watching my money grow"`,
   },
   {
     id: 3,
@@ -224,19 +224,18 @@ const testimonialData = [
   },
 ];
 const Testimonial = styled.div`
-  display: flex;
   color: ${COLORS.BLUE};
+  display: flex;
   flex-direction: row;
   border-radius: 6px;
-  font-size: 1.4rem;
   align-items: center;
   padding: 4rem 4rem;
+  width: 40vw;
+  margin: 1.5rem;
   box-shadow: 0 0.6px 2.1px rgba(0, 0, 0, 0.017),
     0 1.4px 5px rgba(0, 0, 0, 0.024), 0 2.6px 9.4px rgba(0, 0, 0, 0.03),
     0 4.7px 16.8px rgba(0, 0, 0, 0.036), 0 8.8px 31.3px rgba(0, 0, 0, 0.043),
     0 21px 75px rgba(0, 0, 0, 0.06);
-  width: 40vw;
-  margin: 1.5rem;
 
   img {
     border-radius: 50%;
@@ -251,11 +250,14 @@ const Testimonial = styled.div`
   }
 
   @media (max-width: 768px) {
+    flex-direction: column;
     img {
       width: 7.5rem;
+      margin: 0;
+      margin-bottom: 1.5rem;
     }
     width: 85vw;
-    align-items: flex-start;
+    align-items: center;
     font-size: 1.2rem;
   }
 `;
@@ -264,6 +266,11 @@ const TestimonialName = styled.span`
   font-weight: 700;
   display: block;
   font-size: 110%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 const TestimonialTitle = styled.span`
@@ -271,10 +278,20 @@ const TestimonialTitle = styled.span`
   text-align: left;
   margin-bottom: 1.5rem;
   font-size: 110%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 const TestimonialQuote = styled.p`
   text-align: left;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 const LandingPageStyle = styled(PageStyle)``;
