@@ -55,7 +55,7 @@ export const Image = styled.img`
 `;
 
 const ImageGallery = styled.div`
-  /* MOBILE STYLES FIRST */
+  /* Mobile styles first */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -67,6 +67,7 @@ const ImageGallery = styled.div`
     margin-left: 1.5rem;
   }
 
+  /* hence the use of min-width */
   @media (min-width: 768px) {
     width: 60vw;
     margin: 0 auto;
@@ -85,7 +86,11 @@ const SelectedImage = styled.img`
   height: 100vh;
   margin: 0 auto;
   object-fit: cover;
-  box-shadow: 0 23px 52px rgba(0, 0, 0, 0.1.5);
+  box-shadow: 0 1.4px 1.9px -16px rgba(0, 0, 0, 0.022),
+    0 4.3px 4.7px -16px rgba(0, 0, 0, 0.031),
+    0 9.6px 9.6px -16px rgba(0, 0, 0, 0.039),
+    0 19.3px 19.7px -16px rgba(0, 0, 0, 0.048),
+    0 52px 54px -16px rgba(0, 0, 0, 0.07);
 
   @media (max-width: 768px) {
     display: none;
@@ -159,6 +164,7 @@ const DetailsPage = ({ listings, match }) => {
     <DetailsPageStyle>
       <Navbar />
       <main>
+        {/* // Todo: Add proper loading spinners */}
         {status === "loading" && "Loading..."}
         {status === "loaded" && (
           <>
