@@ -116,9 +116,8 @@ const WaitListForm = () => {
               if (res.status > 199 && res.status < 299) {
                 setStatus("submitted");
               }
-              console.log(values);
             } catch (err) {
-              console.log("Something went wrong");
+              console.error("Something went wrong");
               // setStatus("unsubmitted");
               setStatus("error");
             }
