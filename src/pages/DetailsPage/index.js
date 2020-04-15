@@ -59,7 +59,7 @@ const ImageGallery = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow-x: auto; /* clips overflow-y, so applied box-shadows don't show*/
 
   * {
     flex: 0 0 auto;
