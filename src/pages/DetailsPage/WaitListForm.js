@@ -175,9 +175,6 @@ const WaitListForm = () => {
                   borderColor={COLORS.BLUE}
                   boxShadow="true"
                   type="submit"
-                  Join
-                  the
-                  Waitlist
                 >
                   {isSubmitting ? "Submitting..." : "Join the Waitlist"}
                 </Button>
